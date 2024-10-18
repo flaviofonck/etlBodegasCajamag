@@ -1,0 +1,2211 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../IntroBodega6/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>6.1-main_encuestasV1 - Documentación del Proyecto ETL - Completo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#61-main_encuestasv1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-header__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación del Proyecto ETL - Completo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6.1-main_encuestasV1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-nav__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentación del Proyecto ETL - Completo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación y Configuración
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codigo/funciones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funciones.py
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodegas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodegas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-EstandarAfiliados2.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2-EstandarAfiliados2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4-Dimensiones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4-Dimensiones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3-CalendarioMensual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3-CalendarioMensual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6-FactDatosContacto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6-FactDatosContacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5-FactAfiliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5-FactAfiliacion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-FactAportes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1-FactAportes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2-FactEntrega/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2-FactEntrega
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-FactSubsidioVivienda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3-FactSubsidioVivienda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfecold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfecold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-FactTransaccionesVentas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1-FactTransaccionesVentas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio_fijos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio_fijos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-FactServicioSocial%20copy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1-FactServicioSocial copy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 6
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    6.1-main_encuestasV1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    6.1-main_encuestasV1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-de-librerias-y-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación de librerías y funciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-inicial-del-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial del logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcion-para-limpiar-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Función para limpiar HTML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcion-para-cargar-consultas-en-paralelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Función para cargar consultas en paralelo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-del-diccionario-de-tablas-de-la-base-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta del diccionario de tablas de la base de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraccion-de-codigos-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción de códigos de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-neith" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos Neith
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-nombres-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de nombres de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fusion-de-tablas-codigos-de-encuestas-y-nombres-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fusión de tablas: códigos de encuestas y nombres de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-del-diccionario-de-campos-de-la-base-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta del diccionario de campos de la base de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraccion-y-transformacion-de-codigos-qid-y-parent_qid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción y transformación de códigos qid y parent_qid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-la-tabla-lime_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de la tabla lime_questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajuste-de-qid-para-las-tablas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajuste de qid para las tablas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-y-limpieza-de-preguntas-de-encuestas-lime_questions_l10ns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta y limpieza de preguntas de encuestas (lime_questions_l10ns)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-grupos-de-encuestas-lime_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de grupos de encuestas (lime_groups)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-respuestas-de-encuestas-lime_answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de respuestas de encuestas (lime_answers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesamiento-y-transformacion-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesamiento y transformación de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenacion-final-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concatenación final de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-y-combinacion-de-datos-de-afiliados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta y combinación de datos de afiliados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-dwh_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardar-en-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar en base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-de-librerias-y-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación de librerías y funciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-inicial-del-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial del logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcion-para-limpiar-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Función para limpiar HTML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcion-para-cargar-consultas-en-paralelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Función para cargar consultas en paralelo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-del-diccionario-de-tablas-de-la-base-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta del diccionario de tablas de la base de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraccion-de-codigos-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción de códigos de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-neith" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos Neith
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-nombres-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de nombres de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fusion-de-tablas-codigos-de-encuestas-y-nombres-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fusión de tablas: códigos de encuestas y nombres de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-del-diccionario-de-campos-de-la-base-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta del diccionario de campos de la base de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraccion-y-transformacion-de-codigos-qid-y-parent_qid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción y transformación de códigos qid y parent_qid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-la-tabla-lime_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de la tabla lime_questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajuste-de-qid-para-las-tablas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajuste de qid para las tablas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-y-limpieza-de-preguntas-de-encuestas-lime_questions_l10ns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta y limpieza de preguntas de encuestas (lime_questions_l10ns)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-grupos-de-encuestas-lime_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de grupos de encuestas (lime_groups)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-respuestas-de-encuestas-lime_answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de respuestas de encuestas (lime_answers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesamiento-y-transformacion-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesamiento y transformación de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenacion-final-de-encuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concatenación final de encuestas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-y-combinacion-de-datos-de-afiliados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta y combinación de datos de afiliados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-dwh_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardar-en-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar en base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="61-main_encuestasv1">6.1-main_encuestasV1<a class="headerlink" href="#61-main_encuestasv1" title="Permanent link">&para;</a></h1>
+<h3 id="importacion-de-librerias-y-funciones">Importación de librerías y funciones<a class="headerlink" href="#importacion-de-librerias-y-funciones" title="Permanent link">&para;</a></h3>
+<p>Se importan las librerías necesarias (<code>sqlalchemy</code>, <code>pandas</code>, <code>numpy</code>, <code>dateutil</code>, entre otras) y se cargan funciones personalizadas desde el archivo <code>Funciones.py</code>. Además, se ajusta el <code>sys.path</code> para incluir el directorio correspondiente, garantizando la correcta importación del módulo de funciones.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">insert</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="c1">#---------------------------------------------</span>
+<span class="c1">#Import de modulo funciones</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># Agrega el directorio al sys.path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../funciones&#39;</span><span class="p">))</span>
+<span class="c1"># Importa las funciones desde el archivo Funciones.py</span>
+<span class="kn">from</span> <span class="nn">Funciones</span> <span class="kn">import</span> <span class="n">testfunciones</span><span class="p">,</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">Funciones</span> <span class="kn">import</span> <span class="n">Conexion_dwh</span><span class="p">,</span> <span class="n">Conexion_neith</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">testfunciones</span><span class="p">())</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Importacion de funciones correcta, 12-10-2024 11:33
+</code></pre></div>
+
+<h3 id="configuracion-inicial-del-logger">Configuración inicial del logger<a class="headerlink" href="#configuracion-inicial-del-logger" title="Permanent link">&para;</a></h3>
+<p>Se configura el logger para registrar eventos del proceso ETL en el archivo <code>Encuestas.log</code>, utilizando el nivel de detalle <code>INFO</code>. También se registra el inicio del proceso, y se almacena la hora de inicio para medir el tiempo total de ejecución.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="n">log_filename</span><span class="o">=</span><span class="s1">&#39;Encuestas.log&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;COMIENZO ETL&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-12 11:33:22,727 - INFO - COMIENZO ETL
+</code></pre></div>
+
+<h3 id="funcion-para-limpiar-html">Función para limpiar HTML<a class="headerlink" href="#funcion-para-limpiar-html" title="Permanent link">&para;</a></h3>
+<p>La función limpiar_html() toma un texto en formato HTML y lo limpia utilizando la biblioteca BeautifulSoup, devolviendo solo el texto sin etiquetas HTML.</p>
+<h3 id="funcion-para-cargar-consultas-en-paralelo">Función para cargar consultas en paralelo<a class="headerlink" href="#funcion-para-cargar-consultas-en-paralelo" title="Permanent link">&para;</a></h3>
+<p>Se utiliza ThreadPoolExecutor para paralelizar la ejecución de consultas SQL mediante la función load_query(). Esta función intenta ejecutar la consulta y devolver los resultados como un dataframe, manejando errores para devolver None si la consulta falla.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">limpiar_html</span><span class="p">(</span><span class="n">texto_html</span><span class="p">):</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">texto_html</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+<span class="c1">###Librerias para paralelizar</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+
+<span class="k">def</span> <span class="nf">load_query</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span> 
+        <span class="n">df_query</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">motor_consulta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df_query</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Medir tiempos</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="conexion-a-la-base-de-datos-dwh">Conexión a la base de datos DWH<a class="headerlink" href="#conexion-a-la-base-de-datos-dwh" title="Permanent link">&para;</a></h3>
+<p>Se establece la conexión con la base de datos DWH utilizando la función <code>Conexion_dwh()</code> y se crea el motor de conexión con <code>create_engine()</code>. El evento de conexión exitosa se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
+<span class="c1">#Conexion a base dwh</span>
+<span class="n">cadena_conexion_pruebas</span> <span class="o">=</span> <span class="n">Conexion_dwh</span><span class="p">()</span>
+<span class="n">motor_pruebas</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">cadena_conexion_pruebas</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE DWH&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-12 11:33:22,823 - INFO - CONEXION A BASE DWH
+</code></pre></div>
+
+<h3 id="consulta-del-diccionario-de-tablas-de-la-base-de-encuestas">Consulta del diccionario de tablas de la base de encuestas<a class="headerlink" href="#consulta-del-diccionario-de-tablas-de-la-base-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta una consulta SQL para obtener las tablas de la base de datos <code>encuestas</code> que están incluidas en la bodega de datos. La consulta selecciona los campos <code>NombreBaseDeDatos</code> y <code>NombreTabla</code> desde la tabla <code>gb_Dim_Bodega_Inventario de Tablas</code> del DWH, filtrando por el servidor con <code>IdServidor = 3</code> y asegurando que las tablas estén marcadas como incluidas en la bodega (<code>SeIncluyeEnBodega = "Si"</code>).</p>
+<p>El resultado de la consulta se carga en el dataframe <code>df_tablas</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##1. Consultar el diccionario con las tablas de la base de encuestas</span>
+<span class="k">with</span> <span class="n">motor_pruebas</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT NombreBaseDeDatos,NombreTabla FROM dwh.`gb_Dim_Bodega_Inventario de Tablas`  </span>
+<span class="s2">    where IdServidor = 3 and SeIncluyeEnBodega = &quot;Si&quot; and NombreBaseDeDatos = &quot;encuestas&quot; &quot;&quot;&quot;</span>
+    <span class="n">df_tablas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+<span class="c1">#df_tablas</span>
+</code></pre></div>
+<h3 id="extraccion-de-codigos-de-encuestas">Extracción de códigos de encuestas<a class="headerlink" href="#extraccion-de-codigos-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se crea una nueva columna <code>sid</code> en el dataframe <code>df_tablas</code> que contiene los códigos de encuestas. Estos códigos se extraen dividiendo el valor de la columna <code>NombreTabla</code> utilizando el carácter de subrayado (<code>_</code>) como delimitador, y tomando el tercer elemento resultante de la división (índice 2). Luego, la columna <code>sid</code> se convierte en tipo <code>str</code> para asegurarse de que todos los valores estén en formato de cadena.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">## Lista de codigos de encuestas</span>
+<span class="c1">#df_tablas[&#39;sid&#39;] = df_tablas[&#39;NombreTabla&#39;].str.split(&quot;_&quot;)</span>
+<span class="n">df_tablas</span><span class="p">[</span><span class="s1">&#39;sid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_tablas</span><span class="p">[</span><span class="s1">&#39;NombreTabla&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="n">expand</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">df_tablas</span><span class="p">[</span><span class="s2">&quot;sid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_tablas</span><span class="p">[</span><span class="s2">&quot;sid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="conexion-a-la-base-de-datos-neith">Conexión a la base de datos Neith<a class="headerlink" href="#conexion-a-la-base-de-datos-neith" title="Permanent link">&para;</a></h3>
+<p>Se establece la conexión con la base de datos Neith utilizando la función <code>Conexion_neith()</code> para generar la cadena de conexión y <code>create_engine()</code> para crear el motor de conexión. El evento de conexión exitosa se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
+<span class="c1">#Conexion a base Neith</span>
+<span class="n">cadena_conexion_neith</span> <span class="o">=</span> <span class="n">Conexion_neith</span><span class="p">()</span>
+<span class="n">motor_neith</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">cadena_conexion_neith</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE Neith&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-12 11:33:23,561 - INFO - CONEXION A BASE Neith
+</code></pre></div>
+
+<h3 id="consulta-de-nombres-de-encuestas">Consulta de nombres de encuestas<a class="headerlink" href="#consulta-de-nombres-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta una consulta SQL para obtener los nombres de las encuestas desde la tabla <code>lime_surveys_languagesettings</code> de la base de datos <code>encuestas</code> en Neith. La consulta selecciona los campos <code>surveyls_survey_id</code> (identificado como <code>sid</code>) y <code>surveyls_title</code> (nombre de la encuesta). El resultado de la consulta se almacena en el dataframe <code>df_nombre_encuestas</code>, y se asegura que la columna <code>sid</code> sea de tipo <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##2. Consultar nombres de las encuestas</span>
+<span class="k">with</span> <span class="n">motor_neith</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT surveyls_survey_id as sid, surveyls_title as NombreEncuesta </span>
+<span class="s2">    FROM encuestas.lime_surveys_languagesettings &quot;&quot;&quot;</span>
+    <span class="n">df_nombre_encuestas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_nombre_encuestas</span><span class="p">[</span><span class="s2">&quot;sid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_nombre_encuestas</span><span class="p">[</span><span class="s2">&quot;sid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="fusion-de-tablas-codigos-de-encuestas-y-nombres-de-encuestas">Fusión de tablas: códigos de encuestas y nombres de encuestas<a class="headerlink" href="#fusion-de-tablas-codigos-de-encuestas-y-nombres-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se realiza una combinación (merge) de los dataframes <code>df_tablas</code> y <code>df_nombre_encuestas</code> utilizando la columna <code>sid</code> como clave de unión. Esto permite agregar los nombres de las encuestas a las tablas correspondientes. Posteriormente, se eliminan las filas con valores nulos en <code>df_tablas_nombres</code>, y se reinicia el índice del dataframe resultante para garantizar un formato limpio.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">## Nombres de las tablas de encuestas</span>
+<span class="n">df_tablas_nombres</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_tablas</span><span class="p">,</span><span class="n">df_nombre_encuestas</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;sid&#39;</span><span class="p">)</span>
+<span class="n">df_tablas_nombres</span> <span class="o">=</span> <span class="n">df_tablas_nombres</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_tablas_nombres</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;df_tablas.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_tablas_codigos</span> <span class="o">=</span> <span class="n">df_tablas_nombres</span><span class="p">[[</span><span class="s1">&#39;NombreBaseDeDatos&#39;</span><span class="p">,</span> <span class="s1">&#39;NombreTabla&#39;</span><span class="p">,</span> <span class="s1">&#39;sid&#39;</span><span class="p">]]</span>
+</code></pre></div>
+<h3 id="consulta-del-diccionario-de-campos-de-la-base-de-encuestas">Consulta del diccionario de campos de la base de encuestas<a class="headerlink" href="#consulta-del-diccionario-de-campos-de-la-base-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta una consulta SQL para obtener los campos de las tablas de la base de datos <code>encuestas</code>, que están incluidas en la bodega de datos. La consulta selecciona los campos <code>NombreBaseDeDatos</code>, <code>NombreTabla</code>, y <code>NombreCampo</code> desde la tabla <code>gb_Dim_Bodega_Diccionario de Campos</code> en el DWH, filtrando por el servidor con <code>IdServidor = 3</code> y asegurando que los campos estén marcados como incluidos en la bodega (<code>SeIncluyeEnBodega = "Si"</code>).</p>
+<p>El resultado de la consulta se carga en el dataframe <code>df_campos</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##3. Consultar el diccionario con las tablas de la base de encuestas</span>
+<span class="k">with</span> <span class="n">motor_pruebas</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT NombreBaseDeDatos,NombreTabla, NombreCampo FROM dwh.`gb_Dim_Bodega_Diccionario de Campos`</span>
+<span class="s2">    where IdServidor = 3 and SeIncluyeEnBodega = &quot;Si&quot; and NombreBaseDeDatos = &quot;encuestas&quot; &quot;&quot;&quot;</span>
+    <span class="n">df_campos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_campos_codigo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_campos</span><span class="p">,</span><span class="n">df_tablas_codigos</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NombreBaseDeDatos&#39;</span><span class="p">,</span> <span class="s1">&#39;NombreTabla&#39;</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="extraccion-y-transformacion-de-codigos-qid-y-parent_qid">Extracción y transformación de códigos <code>qid</code> y <code>parent_qid</code><a class="headerlink" href="#extraccion-y-transformacion-de-codigos-qid-y-parent_qid" title="Permanent link">&para;</a></h3>
+<p>Se crea la columna <code>qid</code> en el dataframe <code>df_campos_codigo</code>, extrayendo parte del nombre de campo dividiendo el texto por "X". Luego, se limpian los datos y se convierten los valores a formato <code>str</code>. Además, se genera la columna <code>parent_qid</code> tomando los primeros dígitos del código <code>qid</code>, mientras que <code>qid</code> contiene los últimos cinco caracteres.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df_campos_codigo</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_campos_codigo</span><span class="p">[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="n">expand</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">df_campos_codigo_qid</span> <span class="o">=</span> <span class="n">df_campos_codigo</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_campos_codigo_qid</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_campos_codigo_qid</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_campos_codigo_qid</span><span class="p">[</span><span class="s2">&quot;parent_qid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_campos_codigo_qid</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">df_campos_codigo_qid</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_campos_codigo_qid</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#df_campos_codigo_qid.to_excel(&#39;t1.xlsx&#39;,index=False)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#df_campos_codigo_qid[&#39;qid&#39;].str[-5:]</span>
+</code></pre></div>
+<h3 id="consulta-de-la-tabla-lime_questions">Consulta de la tabla <code>lime_questions</code><a class="headerlink" href="#consulta-de-la-tabla-lime_questions" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta una consulta SQL para obtener los datos de la tabla <code>lime_questions</code> en la base de datos <code>encuestas</code>. La consulta selecciona las columnas <code>qid</code>, <code>parent_qid</code>, <code>sid</code>, y <code>title</code>. Posteriormente, las columnas <code>qid</code>, <code>parent_qid</code>, y <code>sid</code> se convierten al tipo <code>str</code> para asegurar una correcta manipulación de datos. El resultado de la consulta se almacena en el dataframe <code>df_lime_questions</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##4. Consultar la tabla lime_questions</span>
+<span class="k">with</span> <span class="n">motor_neith</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT qid, parent_qid, sid,title FROM encuestas.lime_questions &quot;&quot;&quot;</span>
+    <span class="n">df_lime_questions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_lime_questions</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_questions</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_lime_questions</span><span class="p">[</span><span class="s2">&quot;parent_qid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_questions</span><span class="p">[</span><span class="s2">&quot;parent_qid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_lime_questions</span><span class="p">[</span><span class="s2">&quot;sid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_questions</span><span class="p">[</span><span class="s2">&quot;sid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_lime_questions</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>qid</th>
+      <th>parent_qid</th>
+      <th>sid</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>216</td>
+      <td>186</td>
+      <td>832591</td>
+      <td>SQ004</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>217</td>
+      <td>186</td>
+      <td>832591</td>
+      <td>SQ005</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>218</td>
+      <td>186</td>
+      <td>832591</td>
+      <td>SQ006</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>219</td>
+      <td>186</td>
+      <td>832591</td>
+      <td>SQ007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>220</td>
+      <td>186</td>
+      <td>832591</td>
+      <td>SQ008</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1475</th>
+      <td>2690</td>
+      <td>0</td>
+      <td>398684</td>
+      <td>G01Q12</td>
+    </tr>
+    <tr>
+      <th>1476</th>
+      <td>2691</td>
+      <td>0</td>
+      <td>123984</td>
+      <td>Q00</td>
+    </tr>
+    <tr>
+      <th>1477</th>
+      <td>2692</td>
+      <td>0</td>
+      <td>123984</td>
+      <td>Q01</td>
+    </tr>
+    <tr>
+      <th>1478</th>
+      <td>2693</td>
+      <td>0</td>
+      <td>123984</td>
+      <td>Q02</td>
+    </tr>
+    <tr>
+      <th>1479</th>
+      <td>2694</td>
+      <td>0</td>
+      <td>123984</td>
+      <td>Q04</td>
+    </tr>
+  </tbody>
+</table>
+<p>1480 rows × 4 columns</p>
+</div>
+
+<h3 id="ajuste-de-qid-para-las-tablas">Ajuste de <code>qid</code> para las tablas<a class="headerlink" href="#ajuste-de-qid-para-las-tablas" title="Permanent link">&para;</a></h3>
+<p>Se realiza un proceso de combinación entre los dataframes <code>df_campos_codigo_qid</code> y <code>df_lime_questions</code> para arreglar los campos <code>qid</code>. Se ajustan los nombres de columnas y se completan los valores faltantes de <code>qid</code> utilizando los valores de respaldo. El dataframe resultante, <code>df_campos_2</code>, contiene las columnas clave como <code>NombreBaseDeDatos</code>, <code>NombreTabla</code>, <code>NombreCampo</code>, <code>sid</code>, y el <code>qid</code> corregido.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Arreglar qid para las tablas</span>
+<span class="n">df_campos_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_campos_codigo_qid</span> <span class="p">,</span> <span class="n">df_lime_questions</span> <span class="p">,</span> <span class="n">how</span> <span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sid&#39;</span><span class="p">,</span> <span class="s1">&#39;qid&#39;</span><span class="p">])</span>
+<span class="n">df_campos_1</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;title_1&#39;</span><span class="p">,</span> <span class="s1">&#39;parent_qid_x&#39;</span><span class="p">:</span><span class="s1">&#39;parent_qid&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_campos_1</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_campos_1</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span>
+<span class="n">df_campos_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_campos_1</span><span class="p">,</span><span class="n">df_lime_questions</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sid&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;parent_qid&#39;</span><span class="p">])</span>
+<span class="n">df_campos_2</span><span class="p">[</span><span class="s1">&#39;qid_y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_campos_2</span><span class="p">[</span><span class="s1">&#39;qid_x&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_campos_2</span> <span class="o">=</span> <span class="n">df_campos_2</span><span class="p">[[</span><span class="s1">&#39;NombreBaseDeDatos&#39;</span><span class="p">,</span> <span class="s1">&#39;NombreTabla&#39;</span><span class="p">,</span> <span class="s1">&#39;NombreCampo&#39;</span><span class="p">,</span> <span class="s1">&#39;sid&#39;</span><span class="p">,</span> <span class="s1">&#39;qid_y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_campos_2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;qid_y&#39;</span><span class="p">:</span><span class="s1">&#39;qid&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="consulta-y-limpieza-de-preguntas-de-encuestas-lime_questions_l10ns">Consulta y limpieza de preguntas de encuestas (<code>lime_questions_l10ns</code>)<a class="headerlink" href="#consulta-y-limpieza-de-preguntas-de-encuestas-lime_questions_l10ns" title="Permanent link">&para;</a></h3>
+<p>Se consulta la tabla <code>lime_question_l10ns</code> de la base de datos <code>encuestas</code> para obtener información detallada sobre las preguntas de encuestas. Se combina este resultado con el dataframe <code>df_campos_2</code>, eliminando columnas irrelevantes como <code>help</code>, <code>script</code>, y <code>language</code>. Luego, se limpian las preguntas usando la función <code>limpiar_html</code> para eliminar etiquetas HTML, y se eliminan los caracteres especiales, como corchetes. Finalmente, se filtran las filas para excluir registros con <code>qid</code> no válidos como <code>'count'</code> y <code>'other'</code>, y el dataframe se reorganiza con los datos limpios.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##4. Consultar la tabla lime_questions q10</span>
+<span class="k">with</span> <span class="n">motor_neith</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM encuestas.lime_question_l10ns &quot;&quot;&quot;</span>
+    <span class="n">df_lime_questions_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_lime_questions_names</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_questions_names</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_sol</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_campos_2</span><span class="p">,</span><span class="n">df_lime_questions_names</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;qid&#39;</span><span class="p">)</span>
+<span class="n">df_sol</span> <span class="o">=</span> <span class="n">df_sol</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;help&#39;</span><span class="p">,</span> <span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">limpiar_html</span><span class="p">)</span>
+<span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;question_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\[\]]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_sol</span><span class="p">[</span><span class="o">~</span><span class="n">df_sol</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;other&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>C:\Users\GESTION GEAM\AppData\Local\Temp\ipykernel_29464\1878959599.py:2: MarkupResemblesLocatorWarning: The input looks more like a filename than markup. You may want to open this file and pass the filehandle into Beautiful Soup.
+  soup = BeautifulSoup(texto_html, &#39;html.parser&#39;)
+</code></pre></div>
+
+<h3 id="consulta-de-grupos-de-encuestas-lime_groups">Consulta de grupos de encuestas (<code>lime_groups</code>)<a class="headerlink" href="#consulta-de-grupos-de-encuestas-lime_groups" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta una consulta SQL para obtener los grupos de encuestas desde la tabla <code>lime_groups</code> y su descripción desde la tabla <code>lime_group_l10ns</code>. La consulta selecciona el <code>gid</code>, <code>sid</code>, y el nombre del grupo (<code>group_name</code>) como <code>DetalleTabla</code>. El resultado se almacena en el dataframe <code>df_lime_groups</code>, asegurando que la columna <code>sid</code> esté en formato <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">motor_neith</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT e1.gid, e1.sid, e2.group_name as DetalleTabla FROM encuestas.lime_groups as e1</span>
+<span class="s2">                    LEFT JOIN encuestas.lime_group_l10ns as e2</span>
+<span class="s2">                    ON e1.gid= e2.gid&quot;&quot;&quot;</span>
+    <span class="n">df_lime_groups</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_lime_groups</span><span class="p">[</span><span class="s1">&#39;sid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_groups</span><span class="p">[</span><span class="s1">&#39;sid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_clean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_clean</span> <span class="p">,</span> <span class="n">df_lime_groups</span> <span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;sid&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_clean</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NombreBaseDeDatos</th>
+      <th>NombreTabla</th>
+      <th>NombreCampo</th>
+      <th>sid</th>
+      <th>qid</th>
+      <th>id</th>
+      <th>question</th>
+      <th>question_clean</th>
+      <th>gid</th>
+      <th>DetalleTabla</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>encuestas</td>
+      <td>lime_survey_124282</td>
+      <td>124282X29X488</td>
+      <td>124282</td>
+      <td>488</td>
+      <td>488.0</td>
+      <td>&lt;p style="text-align: center;"&gt;&lt;span style="fo...</td>
+      <td>PLANCHA N°1 \n\n\n\nPRINCIPALES\n\n\n\n\n\n\n\...</td>
+      <td>29</td>
+      <td>REPRESENTANTES</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>encuestas</td>
+      <td>lime_survey_161825</td>
+      <td>161825X51X1103</td>
+      <td>161825</td>
+      <td>1103</td>
+      <td>1103.0</td>
+      <td>¿CÓMO CALIFICA EN GENERAL LA CALIDAD DEL SERVI...</td>
+      <td>¿CÓMO CALIFICA EN GENERAL LA CALIDAD DEL SERVI...</td>
+      <td>51</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO DE ALOJAMIENTO</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>encuestas</td>
+      <td>lime_survey_161825</td>
+      <td>161825X51X1104</td>
+      <td>161825</td>
+      <td>1104</td>
+      <td>1104.0</td>
+      <td>¡SU OPINION NOS INTERESA! Si desea registrar u...</td>
+      <td>¡SU OPINION NOS INTERESA! Si desea registrar u...</td>
+      <td>51</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO DE ALOJAMIENTO</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>encuestas</td>
+      <td>lime_survey_161825</td>
+      <td>161825X51X1105SQ001</td>
+      <td>161825</td>
+      <td>1113</td>
+      <td>1113.0</td>
+      <td>LA ATENCION DURANTE EL CHECK IN Y EL CHECK OUT</td>
+      <td>LA ATENCION DURANTE EL CHECK IN Y EL CHECK OUT</td>
+      <td>51</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO DE ALOJAMIENTO</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>encuestas</td>
+      <td>lime_survey_161825</td>
+      <td>161825X51X1105SQ002</td>
+      <td>161825</td>
+      <td>1114</td>
+      <td>1114.0</td>
+      <td>LA ENTREGA DE LA CABAÑA Y ATENCIÓN BRINDADA PO...</td>
+      <td>LA ENTREGA DE LA CABAÑA Y ATENCIÓN BRINDADA PO...</td>
+      <td>51</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO DE ALOJAMIENTO</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>915</th>
+      <td>encuestas</td>
+      <td>lime_survey_995137</td>
+      <td>995137X42X861SQ007</td>
+      <td>995137</td>
+      <td>877</td>
+      <td>877.0</td>
+      <td>E-mail:</td>
+      <td>E-mail:</td>
+      <td>42</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO AL CLIENTE</td>
+    </tr>
+    <tr>
+      <th>916</th>
+      <td>encuestas</td>
+      <td>lime_survey_995137</td>
+      <td>995137X42X862</td>
+      <td>995137</td>
+      <td>862</td>
+      <td>862.0</td>
+      <td>ESTADO LLAMADA:</td>
+      <td>ESTADO LLAMADA:</td>
+      <td>42</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO AL CLIENTE</td>
+    </tr>
+    <tr>
+      <th>917</th>
+      <td>encuestas</td>
+      <td>lime_survey_995137</td>
+      <td>995137X42X863</td>
+      <td>995137</td>
+      <td>863</td>
+      <td>863.0</td>
+      <td>AÑO:</td>
+      <td>AÑO:</td>
+      <td>42</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO AL CLIENTE</td>
+    </tr>
+    <tr>
+      <th>918</th>
+      <td>encuestas</td>
+      <td>lime_survey_995137</td>
+      <td>995137X42X864</td>
+      <td>995137</td>
+      <td>864</td>
+      <td>864.0</td>
+      <td>SEMESTRE:</td>
+      <td>SEMESTRE:</td>
+      <td>42</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO AL CLIENTE</td>
+    </tr>
+    <tr>
+      <th>919</th>
+      <td>encuestas</td>
+      <td>lime_survey_995137</td>
+      <td>995137X42X865</td>
+      <td>995137</td>
+      <td>865</td>
+      <td>865.0</td>
+      <td>MES:</td>
+      <td>MES:</td>
+      <td>42</td>
+      <td>ENCUESTA DE SATISFACCION SERVICIO AL CLIENTE</td>
+    </tr>
+  </tbody>
+</table>
+<p>920 rows × 10 columns</p>
+</div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#df_sol.to_excel(&#39;df_sol.xlsx&#39;,index=False)</span>
+<span class="c1">#df_clean.to_excel(&#39;df_clean.xlsx&#39;,index=False)</span>
+</code></pre></div>
+<h3 id="consulta-de-respuestas-de-encuestas-lime_answers">Consulta de respuestas de encuestas (<code>lime_answers</code>)<a class="headerlink" href="#consulta-de-respuestas-de-encuestas-lime_answers" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta una consulta SQL para obtener las respuestas de encuestas desde la tabla <code>lime_answers</code> y sus descripciones desde la tabla <code>lime_answer_l10ns</code>. La consulta selecciona el <code>aid</code>, <code>qid</code>, <code>code</code>, y la respuesta (<code>answer</code>). El resultado de la consulta se almacena en el dataframe <code>df_lime_answers</code>, asegurando que las columnas <code>qid</code> y <code>aid</code> estén en formato <code>str</code> para facilitar su manipulación.</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">motor_neith</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT a1.aid, a1.qid, a1.code, a2.answer </span>
+<span class="s2">                    FROM encuestas.lime_answers as a1</span>
+<span class="s2">                    LEFT JOIN encuestas.lime_answer_l10ns as a2</span>
+<span class="s2">                    ON a1.aid = a2.aid&quot;&quot;&quot;</span> 
+
+    <span class="n">df_lime_answers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_lime_answers</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_answers</span><span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_lime_answers</span><span class="p">[</span><span class="s1">&#39;aid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_lime_answers</span><span class="p">[</span><span class="s1">&#39;aid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">tables_survey_names</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;NombreTabla&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="procesamiento-y-transformacion-de-encuestas">Procesamiento y transformación de encuestas<a class="headerlink" href="#procesamiento-y-transformacion-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se ejecuta un ciclo que procesa las tablas de encuestas almacenadas en <code>tables_survey_names</code>. Para cada tabla, se cargan los datos y se identifican las columnas relacionadas con preguntas mediante una combinación con <code>df_clean</code>. Luego, se ajustan las respuestas utilizando la tabla <code>df_lime_answers</code> para reemplazar códigos por respuestas reales y se renombra cada columna con su respectiva pregunta limpia.</p>
+<p>Dependiendo de la estructura de la tabla, se reestructura utilizando la función <code>melt</code> para tener una representación de preguntas y respuestas en formato largo. Se verifican las columnas relevantes, como las relacionadas con identificación, para mantener la coherencia de los datos y las tablas resultantes se almacenan en archivos CSV si no cumplen con ciertos criterios. Las tablas procesadas se agregan a la lista <code>tablesToConcat</code> para su posterior concatenación.</p>
+<p>El proceso también incluye la limpieza de columnas como <code>documento</code> y <code>tipo_documento</code>, que se renombran para unificar la estructura entre todas las tablas de encuestas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df_survey</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">columnsStatic</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cédula:&#39;</span><span class="p">,</span><span class="s1">&#39;NIT:&#39;</span><span class="p">,</span><span class="s1">&#39;Tipo Documento de Identidad&#39;</span><span class="p">,</span><span class="s1">&#39;Número Documento de Identidad&#39;</span><span class="p">,</span><span class="s1">&#39;Tipo Documento Identidad&#39;</span><span class="p">,</span> <span class="s1">&#39;Numero de identificación&#39;</span><span class="p">]</span>
+<span class="n">columnsId</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cédula:&#39;</span><span class="p">,</span> <span class="s1">&#39;Número Documento de Identidad&#39;</span><span class="p">,</span> <span class="s1">&#39;Numero de identificación&#39;</span> <span class="p">]</span>
+<span class="n">columnsTipoId</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tipo Documento de Identidad&#39;</span><span class="p">,</span> <span class="s1">&#39;Tipo Documento Identidad&#39;</span> <span class="p">]</span>
+<span class="n">tablesToConcat</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">table_name</span> <span class="ow">in</span> <span class="n">tables_survey_names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">table_name</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">motor_neith</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="n">qr_structure</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM encuestas. &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">table_name</span>
+        <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+
+    <span class="n">dfColumns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">:</span><span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
+    <span class="n">dfColumns_p2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">dfColumns</span> <span class="p">,</span> <span class="n">df_clean</span> <span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span> <span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">dfColumns_p2</span> <span class="o">=</span> <span class="n">dfColumns_p2</span><span class="p">[</span> <span class="o">~</span><span class="n">dfColumns_p2</span><span class="p">[</span><span class="s1">&#39;NombreTabla&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span> <span class="p">]</span>
+    <span class="n">dfColumns_p2</span> <span class="o">=</span> <span class="n">dfColumns_p2</span><span class="p">[[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">,</span><span class="s1">&#39;NombreTabla&#39;</span><span class="p">,</span><span class="s1">&#39;sid&#39;</span><span class="p">,</span><span class="s1">&#39;qid&#39;</span><span class="p">,</span><span class="s1">&#39;question_clean&#39;</span><span class="p">]]</span>
+    <span class="n">dfToValidateAnswer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">dfColumns_p2</span> <span class="p">,</span> <span class="n">df_lime_answers</span> <span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span> <span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;qid&#39;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">dfToValidateAnswer</span> <span class="o">=</span> <span class="n">dfToValidateAnswer</span><span class="p">[</span><span class="o">~</span><span class="n">dfToValidateAnswer</span><span class="p">[</span><span class="s1">&#39;aid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+    <span class="n">columnsTVA</span> <span class="o">=</span> <span class="n">dfToValidateAnswer</span><span class="p">[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][[</span><span class="s1">&#39;submitdate&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">dfColumns_p2</span><span class="p">[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span> 
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columnsTVA</span><span class="p">:</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="n">col</span> <span class="o">+</span> <span class="s1">&#39;_answer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][[</span><span class="n">col</span><span class="p">]]</span> <span class="p">,</span> <span class="n">dfToValidateAnswer</span><span class="p">[</span> <span class="n">dfToValidateAnswer</span><span class="p">[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">col</span> <span class="p">]</span> <span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span> <span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="n">col</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;code&#39;</span> <span class="p">)[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">col</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span> <span class="n">col</span> <span class="o">+</span> <span class="s1">&#39;_answer&#39;</span><span class="p">:</span> <span class="n">col</span> <span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">newName</span> <span class="o">=</span> <span class="n">dfColumns_p2</span><span class="p">[</span> <span class="n">dfColumns_p2</span><span class="p">[</span><span class="s1">&#39;NombreCampo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">col</span> <span class="p">][</span><span class="s1">&#39;question_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">newName</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span> <span class="n">col</span><span class="p">:</span> <span class="n">newName</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">columnsToMantain</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">columnsStatic</span><span class="p">]</span>
+    <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">columnsToMantain</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No aplica&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span> <span class="o">+</span><span class="n">table_name</span> <span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">table_name</span> <span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s1">&#39;FECHA:&#39;</span> <span class="ow">in</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tiene fecha&#39;</span><span class="p">)</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;submitdate&quot;</span><span class="p">,</span><span class="s1">&#39;FECHA:&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">columnsToMantain</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;Pregunta&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;Respuesta&quot;</span><span class="p">)</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="s2">&quot;Respuesta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="s2">&quot;Respuesta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="p">,</span> <span class="s2">&quot; &quot;</span> <span class="p">))</span>
+            <span class="n">tablesToConcat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin fecha&#39;</span><span class="p">)</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;submitdate&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">columnsToMantain</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;Pregunta&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;Respuesta&quot;</span><span class="p">)</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="s2">&quot;Respuesta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="s2">&quot;Respuesta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="p">,</span> <span class="s2">&quot; &quot;</span> <span class="p">))</span>
+            <span class="n">tablesToConcat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_name</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">colClean</span> <span class="ow">in</span> <span class="n">columnsToMantain</span><span class="p">:</span>
+            <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="n">colClean</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="n">colClean</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">))</span>
+
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;posible vacio&#39;</span><span class="p">)</span>
+        <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">table_name</span> <span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+
+
+    <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>    
+    <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span> <span class="n">subset</span> <span class="o">=</span> <span class="n">columnsToMantain</span> <span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">][</span><span class="s1">&#39;DetalleEncuesta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;NombreTabla&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">table_name</span><span class="p">][</span><span class="s1">&#39;DetalleTabla&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> 
+
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columnsId</span><span class="p">:</span>
+        <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span> <span class="n">col</span><span class="p">:</span> <span class="s1">&#39;documento&#39;</span> <span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columnsTipoId</span><span class="p">:</span>
+        <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span> <span class="n">col</span><span class="p">:</span> <span class="s1">&#39;tipo_documento&#39;</span> <span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>lime_survey_124282
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_124282.csv
+lime_survey_161825
+tiene fecha
+lime_survey_189858
+tiene fecha
+lime_survey_267495
+tiene fecha
+lime_survey_385698
+sin fecha
+lime_survey_413658
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_413658.csv
+lime_survey_452416
+tiene fecha
+lime_survey_478847
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_478847.csv
+lime_survey_548818
+tiene fecha
+lime_survey_567215
+sin fecha
+lime_survey_576377
+tiene fecha
+lime_survey_586872
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_586872.csv
+lime_survey_599513
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_599513.csv
+lime_survey_699399
+sin fecha
+posible vacio
+lime_survey_757259
+sin fecha
+lime_survey_767954
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_767954.csv
+lime_survey_773674
+No aplica h:\.shortcut-targets-by-id\1mkTxMHmUmOqVynakPkgZMLxqRsPiIptC\Bloques Bodega\Bloque6\lime_survey_773674.csv
+lime_survey_818378
+sin fecha
+lime_survey_832591
+sin fecha
+lime_survey_934423
+tiene fecha
+lime_survey_959511
+tiene fecha
+lime_survey_995137
+tiene fecha
+</code></pre></div>
+
+<h3 id="concatenacion-final-de-encuestas">Concatenación final de encuestas<a class="headerlink" href="#concatenacion-final-de-encuestas" title="Permanent link">&para;</a></h3>
+<p>Se filtran las tablas procesadas en <code>df_survey</code> que están presentes en la lista <code>tablesToConcat</code> y se almacenan en el diccionario <code>df_survey_2</code>. Luego, se concatenan todas las tablas seleccionadas en un único dataframe <code>df_survey_final</code>, combinando los resultados y asegurando un índice continuo.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df_survey_2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tablesToConcat</span><span class="p">,</span> <span class="n">df_survey</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="p">)</span>
+<span class="n">df_survey_final</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_survey_2</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</code></pre></div>
+<h3 id="consulta-y-combinacion-de-datos-de-afiliados">Consulta y combinación de datos de afiliados<a class="headerlink" href="#consulta-y-combinacion-de-datos-de-afiliados" title="Permanent link">&para;</a></h3>
+<p>Se realiza una consulta a la tabla <code>BD_Dim_Datos_Fijos</code> en la base DWH para obtener los campos <code>DOCUMENTO</code> y <code>CODDOC</code>. Luego, se hace un merge entre los datos de encuestas (<code>df_survey_final</code>) y la información obtenida de la tabla, para complementar los documentos y tipos de documento. Posteriormente, se eliminan las columnas innecesarias y se genera una nueva columna <code>ID_AFILIADO</code> concatenando <code>tipo_documento</code> y <code>documento</code>. Finalmente, se reordenan las columnas colocando <code>ID_AFILIADO</code> al inicio.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
+<span class="c1">#Conexion a base dwh</span>
+<span class="n">cadena_conexion3</span> <span class="o">=</span> <span class="n">Conexion_dwh</span><span class="p">()</span>
+<span class="n">motor3</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">cadena_conexion3</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE DWH&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Bloque 1: Consulta y carga de datos</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Iniciando consulta a BD_Dim_Datos_Fijos y carga de datos.&quot;</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT DOCUMENTO, CODDOC FROM BD_Dim_Datos_Fijos&quot;</span>
+<span class="n">df_datos_fijos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">motor3</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Consulta a BD_Dim_Datos_Fijos completada: </span><span class="si">{</span><span class="n">df_datos_fijos</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> filas cargadas.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Bloque 2: Merge y limpieza de columnas</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Realizando merge entre df_survey_final y BD_Dim_Datos_Fijos, seguido de limpieza de columnas.&quot;</span><span class="p">)</span>
+<span class="n">df_survey_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_survey_final</span><span class="p">,</span> <span class="n">df_datos_fijos</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;documento&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;DOCUMENTO&#39;</span><span class="p">)</span>
+<span class="n">df_survey_final</span> <span class="o">=</span> <span class="n">df_survey_final</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DOCUMENTO&#39;</span><span class="p">])</span>
+<span class="n">df_survey_final</span><span class="p">[</span><span class="s1">&#39;tipo_documento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey_final</span><span class="p">[</span><span class="s1">&#39;CODDOC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;CC&#39;</span><span class="p">)</span>
+<span class="n">df_survey_final</span> <span class="o">=</span> <span class="n">df_survey_final</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CODDOC&#39;</span><span class="p">])</span>
+
+<span class="c1"># Bloque 3: Generación de ID y reorganización de columnas</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generando &#39;ID_AFILIADO&#39; y reorganizando columnas.&quot;</span><span class="p">)</span>
+<span class="n">df_survey_final</span><span class="p">[</span><span class="s1">&#39;ID_AFILIADO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_survey_final</span><span class="p">[</span><span class="s1">&#39;tipo_documento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">df_survey_final</span><span class="p">[</span><span class="s1">&#39;documento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Renombrar columnas</span>
+<span class="n">df_survey_final</span> <span class="o">=</span> <span class="n">df_survey_final</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;submitdate&#39;</span><span class="p">:</span> <span class="s1">&#39;FECHA_ENCUESTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;documento&#39;</span><span class="p">:</span> <span class="s1">&#39;ID_DOCUMENTO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pregunta&#39;</span><span class="p">:</span> <span class="s1">&#39;PREGUNTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Respuesta&#39;</span><span class="p">:</span> <span class="s1">&#39;RESPUESTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DetalleEncuesta&#39;</span><span class="p">:</span> <span class="s1">&#39;DETALLE_ENCUESTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NIT:&#39;</span><span class="p">:</span> <span class="s1">&#39;NIT&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tipo_documento&#39;</span><span class="p">:</span> <span class="s1">&#39;TIPO_DOCUMENTO&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1"># Reordenar las columnas colocando &#39;ID_AFILIADO&#39; en la primera posición</span>
+<span class="n">columnas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ID_AFILIADO&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_survey_final</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="s1">&#39;ID&#39;</span><span class="p">]</span>
+<span class="n">df_survey_final</span> <span class="o">=</span> <span class="n">df_survey_final</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">columnas</span><span class="p">)</span>
+
+<span class="c1"># Mostrar las columnas finales</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Proceso completado. Columnas finales: </span><span class="si">{</span><span class="n">df_survey_final</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-12 11:42:57,543 - INFO - CONEXION A BASE DWH
+2024-10-12 11:42:57,548 - INFO - Iniciando consulta a BD_Dim_Datos_Fijos y carga de datos.
+2024-10-12 11:43:06,213 - INFO - Consulta a BD_Dim_Datos_Fijos completada: 975320 filas cargadas.
+2024-10-12 11:43:06,215 - INFO - Realizando merge entre df_survey_final y BD_Dim_Datos_Fijos, seguido de limpieza de columnas.
+2024-10-12 11:43:06,763 - INFO - Generando &#39;ID_AFILIADO&#39; y reorganizando columnas.
+2024-10-12 11:43:06,916 - INFO - Proceso completado. Columnas finales: [&#39;ID_AFILIADO&#39;, &#39;FECHA_ENCUESTA&#39;, &#39;FECHA:&#39;, &#39;ID_DOCUMENTO&#39;, &#39;PREGUNTA&#39;, &#39;RESPUESTA&#39;, &#39;DETALLE_ENCUESTA&#39;, &#39;NIT&#39;, &#39;TIPO_DOCUMENTO&#39;, &#39;ID_AFILIADO&#39;]
+</code></pre></div>
+
+<h3 id="conexion-a-la-base-de-datos-dwh_1">Conexión a la base de datos DWH<a class="headerlink" href="#conexion-a-la-base-de-datos-dwh_1" title="Permanent link">&para;</a></h3>
+<p>Se establece la conexión con la base de datos DWH utilizando la función <code>Conexion_dwh()</code> y se crea el motor de conexión con <code>create_engine()</code>. El evento de conexión exitosa se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
+<span class="c1">#Conexion a base dwh</span>
+<span class="n">cadena_conexion2</span> <span class="o">=</span> <span class="n">Conexion_dwh</span><span class="p">()</span>
+<span class="n">motor2</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">cadena_conexion2</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE DWH&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-12 11:33:41,951 - INFO - CONEXION A BASE DWH
+</code></pre></div>
+
+<h3 id="guardar-en-base-de-datos-dwh">Guardar en base de datos DWH<a class="headerlink" href="#guardar-en-base-de-datos-dwh" title="Permanent link">&para;</a></h3>
+<p>Se guarda el dataframe <code>df_survey_final</code> en la tabla <code>BD_Fact_Encuestas</code> de la base de datos DWH. Si la tabla ya existe, se reemplaza su contenido con los nuevos datos. Se registra el tiempo total de almacenamiento en el log y, una vez completado el proceso, también se registra el tiempo total de ejecución del proceso ETL.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Guardar en base dwh</span>
+<span class="n">almacenamiento_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">df_survey_final</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;BD_Fact_Encuestas&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">motor2</span><span class="p">,</span> <span class="n">if_exists</span> <span class="o">=</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ALMACENAMIENTO --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">almacenamiento_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-12 11:34:07,244 - INFO - ALMACENAMIENTO --- 25.28 seconds ---
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/init_mermaid.js"></script>
+      
+    
+  </body>
+</html>

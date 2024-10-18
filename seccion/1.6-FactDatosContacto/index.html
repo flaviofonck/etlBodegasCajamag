@@ -1,0 +1,1821 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.3-CalendarioMensual/">
+      
+      
+        <link rel="next" href="../1.5-FactAfiliacion/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>1.6-FactDatosContacto - Documentación del Proyecto ETL - Completo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#16-factdatoscontacto" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-header__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación del Proyecto ETL - Completo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.6-FactDatosContacto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-nav__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentación del Proyecto ETL - Completo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación y Configuración
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codigo/funciones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funciones.py
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodegas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodegas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-EstandarAfiliados2.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2-EstandarAfiliados2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4-Dimensiones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4-Dimensiones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3-CalendarioMensual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3-CalendarioMensual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1.6-FactDatosContacto
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1.6-FactDatosContacto
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-de-librerias-y-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación de librerías y funciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-consultas-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de consultas SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-y-carga-de-tablas-desde-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión y carga de tablas desde SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validador-de-campos-repetidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validador de campos repetidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-columnas-con-sus-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de columnas con sus tipos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacion-y-limpieza-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformación y limpieza de datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenacion-de-tablas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concatenación de tablas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agregacion-de-datos-por-periodo-trimestral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agregación de datos por periodo trimestral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardar-en-la-base-de-datos-dwh-con-manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar en la base de datos DWH con manejo de errores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5-FactAfiliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5-FactAfiliacion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-FactAportes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1-FactAportes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2-FactEntrega/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2-FactEntrega
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-FactSubsidioVivienda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3-FactSubsidioVivienda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfecold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfecold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-FactTransaccionesVentas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1-FactTransaccionesVentas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio_fijos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio_fijos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-FactServicioSocial%20copy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1-FactServicioSocial copy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 6
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.1-main_encuestasV1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1-main_encuestasV1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-de-librerias-y-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación de librerías y funciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-consultas-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de consultas SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-y-carga-de-tablas-desde-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión y carga de tablas desde SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validador-de-campos-repetidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validador de campos repetidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-columnas-con-sus-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de columnas con sus tipos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformacion-y-limpieza-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformación y limpieza de datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenacion-de-tablas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concatenación de tablas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agregacion-de-datos-por-periodo-trimestral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agregación de datos por periodo trimestral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardar-en-la-base-de-datos-dwh-con-manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar en la base de datos DWH con manejo de errores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="16-factdatoscontacto">1.6-FactDatosContacto<a class="headerlink" href="#16-factdatoscontacto" title="Permanent link">&para;</a></h1>
+<h3 id="importacion-de-librerias-y-funciones">Importación de librerías y funciones<a class="headerlink" href="#importacion-de-librerias-y-funciones" title="Permanent link">&para;</a></h3>
+<p>Se importan las librerías necesarias, como <code>sqlalchemy</code>, <code>pandas</code>, <code>numpy</code>, y <code>dateutil</code>, junto con funciones personalizadas desde el archivo <code>Funciones.py</code>. Además, se ajusta el <code>sys.path</code> para incluir el directorio correspondiente, lo que asegura la correcta importación de las funciones.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="c1">#Import de modulo funciones</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Agrega el directorio al sys.path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../funciones&#39;</span><span class="p">))</span>
+<span class="c1"># Importa las funciones desde el archivo Funciones.py</span>
+<span class="kn">from</span> <span class="nn">Funciones</span> <span class="kn">import</span> <span class="n">StoreDuplicated</span><span class="p">,</span> <span class="n">RemoveDuplicated</span><span class="p">,</span> <span class="n">obtener_conexion</span><span class="p">,</span> <span class="n">cargar_tablas</span><span class="p">,</span> <span class="n">guardar_en_dwh</span><span class="p">,</span> <span class="n">testfunciones</span><span class="p">,</span> <span class="n">setup_logger</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">testfunciones</span><span class="p">())</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Importacion de funciones correcta, 14-10-2024 09:07
+</code></pre></div>
+
+<h3 id="configuracion-del-logger">Configuración del logger<a class="headerlink" href="#configuracion-del-logger" title="Permanent link">&para;</a></h3>
+<p>Se configura el logger para registrar los eventos del proceso ETL en el archivo <code>FactDatosContacto.log</code> con el nivel de detalle <code>INFO</code>, e inicia el registro indicando el comienzo del proceso.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="n">log_filename</span><span class="o">=</span><span class="s1">&#39;FactDatosContacto.log&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;COMIENZO ETL&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:07:13,360 - INFO - COMIENZO ETL
+</code></pre></div>
+
+<h3 id="definicion-de-consultas-sql">Definición de consultas SQL<a class="headerlink" href="#definicion-de-consultas-sql" title="Permanent link">&para;</a></h3>
+<p>Se define un diccionario <code>qr_structure</code> con consultas SQL para extraer datos de las tablas <code>subsi15</code>, <code>subsi02</code>, y <code>subsi22</code> de la base de datos <code>subsidio</code>. Estas consultas generan un identificador único <code>id</code> y extraen diversas columnas clave para los trabajadores, empresas y beneficiarios. El proceso de lectura de consultas se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Lista de querys</span>
+<span class="n">qr_structure</span> <span class="o">=</span> <span class="p">{</span>
+<span class="c1">##############################SUBSI15###############################################</span>
+    <span class="s2">&quot;subsi15_dc&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;select </span>
+<span class="s1">CONCAT( coddoc, cedtra) as id,codsuc,codlis,cedtra,coddoc,</span>
+<span class="s1">direccion,codciu,codbar,telefono,email,codzon,rural,agro,captra,</span>
+<span class="s1">tipdis,horas,salario,tipsal,fecsal,sexo,estciv,tipcon,feccon,trasin,</span>
+<span class="s1">vivienda,cabhog,nivedu,tipcot,vendedor,empleador,codcue,ofides,codban,</span>
+<span class="s1">numcue,tipcue,fecemi,feccar,codcat,fecnac,ciunac,fecing,fecpre,fecafi,</span>
+<span class="s1">fecsis,fecmod,usumod,usuario,giro,codgir,estado,codest,fecest,carnet,benef,</span>
+<span class="s1">ruaf,ruasub,fecrua,nota,habdat,notcor,fecexp,codfonpen,numafipen,orisex,</span>
+<span class="s1">codocu,facvul,codetn,codpai,celular1,celular2,tiptar,cedant,pueblo,resguardo, 1 as Trabajador</span>
+<span class="s1">from subsidio.subsi15&#39;&#39;&#39;</span><span class="p">,</span>
+
+<span class="c1">##############################SUBSI02###############################################</span>
+    <span class="s2">&quot;subsi02_dc&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;select </span>
+<span class="s1">CONCAT( coddoc , nit ) as id,nit,digver,tipper,coddoc,razsoc,sigla,nomcom,</span>
+<span class="s1">coddocreppri,cedrep,repleg,coddocrepsup,cedrepsup,replegsup,jefper,direccion,</span>
+<span class="s1">codciu,codbar,celular,telefono,fax,email,codzon,dirpri,ciupri,celpri,telpri,</span>
+<span class="s1">faxpri,emailpri,nomcon,ofiafi,codase,calemp,tipemp,tipsoc,tipapo,forpre,pymes,</span>
+<span class="s1">contratista,colegio,habdat,notcor,matmer,codact,codind,feccer,actapr,fecapr,</span>
+<span class="s1">fecafi,fecsis,fecmod,estado,resest,codest,fecest,totapo,nomini,coddocrepleg,</span>
+<span class="s1">priaperepleg,segaperepleg,prinomrepleg,segnomrepleg,codcaj,pagweb,dirnot,emailnot, 1 as Empresa</span>
+<span class="s1">from subsidio.subsi02&#39;&#39;&#39;</span><span class="p">,</span>
+<span class="c1">##############################SUBSI22_23###############################################</span>
+    <span class="s2">&quot;subsi22_dc&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;select </span>
+<span class="s1">CONCAT( coddoc,documento) as id, codben,documento,fecexp,coddoc,priape,segape,prinom,segnom,parent,huerfano,tiphij,</span>
+<span class="s1">captra,tipdis,nivedu,sexo,fecnac,ciunac,calendario,giro,codgir,estado,codest,fecest,</span>
+<span class="s1">regimen,tipocotizante,created_at,updated_at, 1 as Beneficiario</span>
+<span class="s1">from subsidio.subsi22&#39;&#39;&#39;</span>    
+
+               <span class="p">}</span>
+<span class="n">df_structure</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;LECTURA DE QUERYS&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:07:15,635 - INFO - LECTURA DE QUERYS
+</code></pre></div>
+
+<h3 id="conexion-y-carga-de-tablas-desde-sql">Conexión y carga de tablas desde SQL<a class="headerlink" href="#conexion-y-carga-de-tablas-desde-sql" title="Permanent link">&para;</a></h3>
+<p>Este código se conecta a la base de datos Minerva y carga las tablas especificadas en <code>qr_structure</code> utilizando SQL. Para cada tabla, el proceso de carga es registrado en el <code>logger</code>, y al final se registra el tiempo total que tomó cargar todas las tablas desde MySQL. Esto permite monitorear la ejecución y duración del proceso de carga de datos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Conexion a base Minerva</span>
+<span class="n">motor</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;minerva&#39;</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE MINERVA&#39;</span><span class="p">)</span>
+<span class="c1"># Ejemplo de cómo llamarla</span>
+<span class="n">cargar_tablas</span><span class="p">(</span><span class="n">motor</span><span class="p">,</span> <span class="n">qr_structure</span><span class="p">,</span> <span class="n">df_structure</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:07:15,656 - INFO - CONEXION A BASE MINERVA
+2024-10-14 09:07:16,177 - INFO - Cargando subsi15_dc 
+2024-10-14 09:08:10,668 - INFO - Cargada subsi15_dc --- 54.49 seconds ---
+2024-10-14 09:08:10,669 - INFO - Cargando subsi02_dc 
+2024-10-14 09:08:20,958 - INFO - Cargada subsi02_dc --- 10.29 seconds ---
+2024-10-14 09:08:20,960 - INFO - Cargando subsi22_dc 
+2024-10-14 09:08:51,585 - INFO - Cargada subsi22_dc --- 30.63 seconds ---
+2024-10-14 09:08:51,768 - INFO - CARGUE TABLAS DESDE MYSQL --- 96.11 seconds ---
+</code></pre></div>
+
+<h3 id="validador-de-campos-repetidos">Validador de campos repetidos<a class="headerlink" href="#validador-de-campos-repetidos" title="Permanent link">&para;</a></h3>
+<p>Se verifica la existencia de registros duplicados en todas las tablas del diccionario <code>df_structure</code>. Si no existe la columna <code>id</code>, se crea concatenando las columnas <code>numdoc</code> y <code>coddoc</code>. Luego, se compara el resto de las columnas para detectar duplicados. Los registros duplicados se almacenan utilizando la función <code>StoreDuplicated</code>, y se eliminan los duplicados con <code>RemoveDuplicated</code>. Se registran en el log los resultados de la validación, y se manejan adecuadamente los posibles errores.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Validador de campos repetidos</span>
+<span class="n">validador_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># Iterar sobre todas las tablas excepto &#39;subsi16&#39;</span>
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()]:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span>
+
+    <span class="c1"># Validar si la columna &#39;id&#39; existe; si no, crearla</span>
+    <span class="k">if</span> <span class="s1">&#39;id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;numdoc&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="s1">&#39;coddoc&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="c1"># Crear la columna &#39;id&#39; concatenando &#39;numdoc&#39; y &#39;coddoc&#39;</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;numdoc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;coddoc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columna &#39;id&#39; creada en el DataFrame: </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Si no existen las columnas necesarias para crear &#39;id&#39;, saltar la tabla</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No se encontraron las columnas &#39;numdoc&#39; y &#39;coddoc&#39; necesarias para crear &#39;id&#39; en el DataFrame: </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>  <span class="c1"># Saltar a la siguiente tabla si no se pueden crear los valores de &#39;id&#39;</span>
+
+    <span class="c1"># Asegurarse de que la columna &#39;id&#39; existe antes de proceder</span>
+    <span class="k">if</span> <span class="s1">&#39;id&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="c1"># Definir las columnas para comparar, excluyendo &#39;id&#39;</span>
+        <span class="n">ColumnsToCompare</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Imprimir el nombre de la tabla en proceso</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Procesando tabla: </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Almacenar duplicados</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">StoreDuplicated</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">ColumnsToCompare</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;trazaDuplicados_</span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error en StoreDuplicated para la tabla </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Limpieza inicial para quitar duplicados</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">RemoveDuplicated</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;fecest&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error en RemoveDuplicated para la tabla </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Registrar la validación en el log</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VALIDADOR TABLA: </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La columna &#39;id&#39; no fue creada correctamente en el DataFrame: </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VALIDADOR DUPLICADOS --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">validador_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Procesando tabla: subsi15_dc
+Guardando duplicados
+Duplicados guardados en: trazaDuplicados_subsi15_dc.csv
+
+
+2024-10-14 09:09:16,105 - INFO - VALIDADOR TABLA: subsi15_dc
+
+
+Procesando tabla: subsi02_dc
+Guardando duplicados
+Duplicados guardados en: trazaDuplicados_subsi02_dc.csv
+
+
+2024-10-14 09:09:18,542 - INFO - VALIDADOR TABLA: subsi02_dc
+
+
+Procesando tabla: subsi22_dc
+Guardando duplicados
+Duplicados guardados en: trazaDuplicados_subsi22_dc.csv
+
+
+2024-10-14 09:09:25,954 - INFO - VALIDADOR TABLA: subsi22_dc
+2024-10-14 09:09:25,956 - INFO - VALIDADOR DUPLICADOS --- 34.17 seconds ---
+</code></pre></div>
+
+<h3 id="definicion-de-columnas-con-sus-tipos">Definición de columnas con sus tipos<a class="headerlink" href="#definicion-de-columnas-con-sus-tipos" title="Permanent link">&para;</a></h3>
+<p>Se clasifican las columnas de cada tabla en el diccionario <code>df_structure</code> en tres tipos: numéricas, de fechas y de texto. Las columnas de fechas, identificadas por el prefijo "fec", se convierten al formato de fecha utilizando <code>pd.to_datetime()</code>. Se registran los tipos de columnas en tres diccionarios (<code>numericColumns</code>, <code>datesColumns</code>, <code>textColumns</code>) y se asegura que las transformaciones se apliquen correctamente. El tiempo total de este proceso se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Definir columnas con sus tipos</span>
+<span class="n">transfor2_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">numerics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;int16&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float16&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">]</span>
+<span class="n">numericColumns</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">datesColumns</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">textColumns</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">numericColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span> <span class="n">include</span> <span class="o">=</span> <span class="n">numerics</span> <span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;fec&#39;</span><span class="p">)</span> <span class="p">]</span>
+    <span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span> <span class="n">numericColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">+</span> <span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="p">)</span> <span class="p">]</span><span class="o">+</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;cod&#39;</span><span class="p">)</span> <span class="p">]</span><span class="o">+</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ced&#39;</span><span class="p">)</span> <span class="p">]</span><span class="o">+</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">)</span> <span class="p">]</span>
+    <span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]))</span>
+    <span class="c1">#Convertir columnas que tengan &quot;fec&quot; en el nombre en tipo fecha</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span> <span class="n">x</span> <span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TRANSFORMACION 2 --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">transfor2_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:09:29,742 - INFO - TRANSFORMACION 2 --- 3.75 seconds ---
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">df_structure</span><span class="p">[</span><span class="s1">&#39;subsi15_dc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df_structure</span><span class="p">[</span><span class="s1">&#39;subsi15_dc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>{int64: [&#39;codbar&#39;, &#39;horas&#39;, &#39;salario&#39;, &#39;usuario&#39;, &#39;orisex&#39;, &#39;facvul&#39;, &#39;codetn&#39;, &#39;Trabajador&#39;], datetime64[ns]: [&#39;fecsal&#39;, &#39;feccon&#39;, &#39;fecemi&#39;, &#39;feccar&#39;, &#39;fecnac&#39;, &#39;fecing&#39;, &#39;fecpre&#39;, &#39;fecafi&#39;, &#39;fecsis&#39;, &#39;fecmod&#39;, &#39;fecest&#39;, &#39;fecrua&#39;, &#39;fecexp&#39;], float64: [&#39;usumod&#39;, &#39;ruasub&#39;], object: [&#39;id&#39;, &#39;codsuc&#39;, &#39;codlis&#39;, &#39;cedtra&#39;, &#39;coddoc&#39;, &#39;direccion&#39;, &#39;codciu&#39;, &#39;telefono&#39;, &#39;email&#39;, &#39;codzon&#39;, &#39;rural&#39;, &#39;agro&#39;, &#39;captra&#39;, &#39;tipdis&#39;, &#39;tipsal&#39;, &#39;sexo&#39;, &#39;estciv&#39;, &#39;tipcon&#39;, &#39;trasin&#39;, &#39;vivienda&#39;, &#39;cabhog&#39;, &#39;nivedu&#39;, &#39;tipcot&#39;, &#39;vendedor&#39;, &#39;empleador&#39;, &#39;codcue&#39;, &#39;ofides&#39;, &#39;codban&#39;, &#39;numcue&#39;, &#39;tipcue&#39;, &#39;codcat&#39;, &#39;ciunac&#39;, &#39;giro&#39;, &#39;codgir&#39;, &#39;estado&#39;, &#39;codest&#39;, &#39;carnet&#39;, &#39;benef&#39;, &#39;ruaf&#39;, &#39;nota&#39;, &#39;habdat&#39;, &#39;notcor&#39;, &#39;codfonpen&#39;, &#39;numafipen&#39;, &#39;codocu&#39;, &#39;codpai&#39;, &#39;celular1&#39;, &#39;celular2&#39;, &#39;tiptar&#39;, &#39;cedant&#39;, &#39;pueblo&#39;, &#39;resguardo&#39;]}
+</code></pre></div>
+
+<h3 id="transformacion-y-limpieza-de-datos">Transformación y limpieza de datos<a class="headerlink" href="#transformacion-y-limpieza-de-datos" title="Permanent link">&para;</a></h3>
+<p>Se realiza una limpieza de las columnas de tipo texto en todas las tablas del diccionario <code>df_structure</code>, excepto en <code>subsi15</code> y <code>subsi16</code>. Las columnas de texto se convierten a mayúsculas, se eliminan los espacios en blanco al inicio y al final, y se reemplazan los valores <code>"NAN"</code> y <code>"NONE"</code> por valores nulos (<code>NaN</code>). El tiempo total de limpieza se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Transformación 2</span>
+<span class="n">limpieza_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span>  <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;subsi15&#39;</span> <span class="p">,</span> <span class="s1">&#39;subsi16&#39;</span> <span class="p">]</span> <span class="p">]</span>   <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ky</span><span class="p">)</span>
+    <span class="c1">#Pasar las columnas tipo texto a UPPER</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="c1">#En las columnas tipo texto, eliminar espacios al comienzo y al final</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="c1">#Reemplazar los &quot;NAN&quot; o &quot;NONE&quot; por NaN</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;NAN&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;NONE&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;LIMPIEZA --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">limpieza_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>subsi15_dc
+
+
+C:\Users\flavi\AppData\Local\Temp\ipykernel_9096\136011473.py:11: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+  df_structure[ky][textColumns[ky]] = df_structure[ky][textColumns[ky]].replace(&#39;NONE&#39;, np.nan)
+
+
+subsi02_dc
+
+
+C:\Users\flavi\AppData\Local\Temp\ipykernel_9096\136011473.py:11: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+  df_structure[ky][textColumns[ky]] = df_structure[ky][textColumns[ky]].replace(&#39;NONE&#39;, np.nan)
+
+
+subsi22_dc
+
+
+2024-10-14 09:10:20,666 - INFO - LIMPIEZA --- 50.87 seconds ---
+</code></pre></div>
+
+<h3 id="concatenacion-de-tablas">Concatenación de tablas<a class="headerlink" href="#concatenacion-de-tablas" title="Permanent link">&para;</a></h3>
+<p>Se concatenan todas las tablas presentes en el diccionario <code>df_structure</code> en un único dataframe llamado <code>df_struc_Total</code>. La concatenación se realiza ignorando los índices previos, lo que crea un dataframe consolidado con todos los registros.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Concatenacion Tablas</span>
+<span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#df_struc_Total = df_struc_Total.drop_duplicates(subset=&#39;id&#39;, keep=&#39;last&#39;)</span>
+<span class="c1">#df_struc_Total.columns.tolist()</span>
+</code></pre></div>
+<h3 id="agregacion-de-datos-por-periodo-trimestral">Agregación de datos por periodo trimestral<a class="headerlink" href="#agregacion-de-datos-por-periodo-trimestral" title="Permanent link">&para;</a></h3>
+<p>Se realiza una agregación del dataframe <code>df_struc_Total</code> por <code>id</code> y por trimestre, utilizando la columna <code>fecafi</code> para generar los periodos trimestrales. Se aplican diferentes funciones de agregación como <code>last</code>, <code>first</code>, <code>sum</code>, y <code>nunique</code> según corresponda a cada columna. Después de la agregación, se elimina la columna <code>Trimestre</code> si no es necesaria en el dataframe final. El proceso se registra en el log, indicando tanto el inicio como la finalización de la agregación.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Iniciar la agregación en el log</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;INICIO DE AGREGACIÓN POR PERIODO&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convertir &#39;fecafi&#39; a un formato trimestral para la agrupación y evitar fragmentación</span>
+<span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_struc_Total</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_struc_Total</span><span class="p">[</span><span class="s1">&#39;fecafi&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Trimestre&#39;</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Agrupar por &#39;id&#39; y &#39;Trimestre&#39;</span>
+<span class="n">df_agg</span> <span class="o">=</span> <span class="n">df_struc_Total</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;Trimestre&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;codsuc&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span> <span class="s1">&#39;codlis&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;cedtra&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;coddoc&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;direccion&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codciu&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codbar&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;telefono&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codzon&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;rural&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;agro&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;captra&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipdis&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;horas&#39;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span>              <span class="c1"># Sumar las horas </span>
+    <span class="s1">&#39;salario&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>           <span class="c1"># Mantener el último salario registrado</span>
+    <span class="s1">&#39;tipsal&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecsal&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;sexo&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;estciv&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipcon&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;feccon&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;trasin&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;vivienda&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cabhog&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;nivedu&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipcot&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;vendedor&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;empleador&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codcue&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;ofides&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codban&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;numcue&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipcue&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecemi&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;feccar&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codcat&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecnac&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;ciunac&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecing&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fecpre&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecafi&#39;</span><span class="p">:</span> <span class="s1">&#39;first&#39;</span><span class="p">,</span>           <span class="c1"># Mantener la primera fecha </span>
+    <span class="s1">&#39;fecsis&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecmod&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;usumod&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;usuario&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;giro&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codgir&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;estado&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codest&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fecest&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;carnet&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;benef&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;ruaf&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;ruasub&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecrua&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;nota&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;habdat&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;notcor&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecexp&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codfonpen&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;numafipen&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;orisex&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codocu&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;facvul&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codetn&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;codpai&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;celular1&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;celular2&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tiptar&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;cedant&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;pueblo&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;resguardo&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;Trabajador&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nit&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>   <span class="s1">&#39;digver&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipper&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;razsoc&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;sigla&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;nomcom&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;coddocreppri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;cedrep&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;repleg&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;coddocrepsup&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;cedrepsup&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;replegsup&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;jefper&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;celular&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fax&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;dirpri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ciupri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;celpri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;telpri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;faxpri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;emailpri&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;nomcon&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;ofiafi&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codase&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;calemp&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipemp&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipsoc&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipapo&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;forpre&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;pymes&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;contratista&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;colegio&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;matmer&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codact&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codind&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;feccer&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;actapr&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;fecapr&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;resest&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;totapo&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nomini&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;coddocrepleg&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;priaperepleg&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;segaperepleg&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;prinomrepleg&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;segnomrepleg&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codcaj&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;pagweb&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dirnot&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;emailnot&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;Empresa&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;codben&#39;</span><span class="p">:</span> <span class="s1">&#39;nunique&#39;</span><span class="p">,</span>          <span class="c1"># Número de beneficiarios únicos</span>
+    <span class="s1">&#39;documento&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;priape&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;segape&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;prinom&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>   <span class="s1">&#39;segnom&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;parent&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;huerfano&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tiphij&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;calendario&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;regimen&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;tipocotizante&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;created_at&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;updated_at&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>  <span class="s1">&#39;Beneficiario&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span>
+<span class="p">})</span>
+
+<span class="c1"># Eliminar columna &#39;Trimestre&#39; si no se necesita en el DataFrame final</span>
+<span class="n">df_agg</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Trimestre&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Finalizar la agregación en el log</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;AGREGACIÓN POR PERIODO FINALIZADA&#39;</span><span class="p">)</span>
+
+<span class="c1"># Asignar el DataFrame agrupado a df_struc_Total para la siguiente etapa</span>
+<span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">df_agg</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:10:22,167 - INFO - INICIO DE AGREGACIÓN POR PERIODO
+2024-10-14 09:10:46,655 - INFO - AGREGACIÓN POR PERIODO FINALIZADA
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">df_agg</span>
+<span class="c1"># Convertir todos los nombres de las columnas de df_struc_Total a mayúsculas</span>
+<span class="n">df_struc_Total</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_struc_Total</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="c1"># Cambiar el nombre de dos campos específicos</span>
+<span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">df_struc_Total</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;ID&#39;</span><span class="p">:</span> <span class="s1">&#39;ID_AFILIADO&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;CODCIU&#39;</span><span class="p">:</span> <span class="s1">&#39;COD_CIU&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CODSUC&#39;</span><span class="p">:</span><span class="s1">&#39;COD_SUCURSAL&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CODZON&#39;</span><span class="p">:</span><span class="s1">&#39;COD_ZON&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ESTCIV&#39;</span><span class="p">:</span><span class="s1">&#39;ESTADO_CIVIL&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NUMCUE&#39;</span><span class="p">:</span><span class="s1">&#39;NUMERO_CUENTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TIPCUE&#39;</span><span class="p">:</span><span class="s1">&#39;TIPO_CUENTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CODBAN&#39;</span><span class="p">:</span><span class="s1">&#39;COD_BANCO&#39;</span>
+    <span class="p">})</span>
+
+<span class="c1"># Seleccionar solo las columnas que deseas conservar</span>
+<span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">df_struc_Total</span><span class="p">[[</span>
+    <span class="s1">&#39;ID_AFILIADO&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_CIU&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_SUCURSAL&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_ZON&#39;</span><span class="p">,</span> <span class="s1">&#39;ESTADO_CIVIL&#39;</span><span class="p">,</span> <span class="s1">&#39;NUMERO_CUENTA&#39;</span><span class="p">,</span> <span class="s1">&#39;TIPO_CUENTA&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_BANCO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TELEFONO&#39;</span><span class="p">,</span><span class="s1">&#39;EMAIL&#39;</span><span class="p">,</span><span class="s1">&#39;DIRECCION&#39;</span>
+    <span class="p">]]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_struc_Total</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID_AFILIADO</th>
+      <th>COD_CIU</th>
+      <th>COD_SUCURSAL</th>
+      <th>COD_ZON</th>
+      <th>ESTADO_CIVIL</th>
+      <th>NUMERO_CUENTA</th>
+      <th>TIPO_CUENTA</th>
+      <th>COD_BANCO</th>
+      <th>TELEFONO</th>
+      <th>EMAIL</th>
+      <th>DIRECCION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CC04619</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>CRA 36 31-60</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CC05715</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>4311683</td>
+      <td>None</td>
+      <td>CALLE 13 2 27</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CC09039</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CC090913</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>4502857</td>
+      <td>None</td>
+      <td>MZ 33 CASA 20 PARQUE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CC091013</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>MZ A CASA 15</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>463467</th>
+      <td>TI98120770829</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>MZ 125 CS2 CIUDADELA</td>
+    </tr>
+    <tr>
+      <th>463468</th>
+      <td>TI99012615902</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>4201354</td>
+      <td>TIENDASAMARIASAS@GAMAIL.COM</td>
+      <td>CL 12 N 17-21</td>
+    </tr>
+    <tr>
+      <th>463469</th>
+      <td>TI99022410527</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>CRA 50 N.24A-150</td>
+    </tr>
+    <tr>
+      <th>463470</th>
+      <td>TI99032003377</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>MZ 14 CS 6 URB EL CISNE</td>
+    </tr>
+    <tr>
+      <th>463471</th>
+      <td>TI99040317160</td>
+      <td>47001</td>
+      <td>001</td>
+      <td>47001</td>
+      <td>1</td>
+      <td>None</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>CAMILO036@GMAIL.COM</td>
+      <td>CL 32 N31-28 COREA</td>
+    </tr>
+  </tbody>
+</table>
+<p>463472 rows × 11 columns</p>
+</div>
+
+<h3 id="guardar-en-la-base-de-datos-dwh-con-manejo-de-errores">Guardar en la base de datos DWH con manejo de errores<a class="headerlink" href="#guardar-en-la-base-de-datos-dwh-con-manejo-de-errores" title="Permanent link">&para;</a></h3>
+<p>Se intenta guardar los primeros 1000 registros del dataframe <code>df_struc_Total</code> en la tabla <code>BD_FactDatosContactos</code> en la base de datos DWH. Si el proceso es exitoso, se registra el tiempo de almacenamiento en el log. En caso de error, se realiza un rollback para evitar transacciones pendientes y se registra el error en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Llamada a la función para un único DataFrame</span>
+<span class="n">guardar_en_dwh</span><span class="p">(</span><span class="n">df_struc_Total</span><span class="p">,</span> <span class="s1">&#39;BD_FactDatosContactos&#39;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:10:50,097 - INFO - CONEXION A BASE DWH
+2024-10-14 09:10:50,662 - INFO - Almacenando tabla única en DWH como BD_FactDatosContactos
+2024-10-14 09:11:44,758 - INFO - Tabla almacenada correctamente.
+2024-10-14 09:11:45,308 - INFO - ALMACENAMIENTO --- 55.21 seconds ---
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;FINAL ETL --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-14 09:11:45,346 - INFO - FINAL ETL --- 272.06 seconds ---
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/init_mermaid.js"></script>
+      
+    
+  </body>
+</html>

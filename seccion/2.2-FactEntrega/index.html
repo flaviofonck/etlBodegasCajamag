@@ -1,0 +1,2263 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2.1-FactAportes/">
+      
+      
+        <link rel="next" href="../2.3-FactSubsidioVivienda/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>2.2-FactEntrega - Documentación del Proyecto ETL - Completo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#22-factentrega" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-header__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación del Proyecto ETL - Completo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.2-FactEntrega
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-nav__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentación del Proyecto ETL - Completo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación y Configuración
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codigo/funciones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funciones.py
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodegas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodegas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-EstandarAfiliados2.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2-EstandarAfiliados2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4-Dimensiones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4-Dimensiones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3-CalendarioMensual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3-CalendarioMensual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6-FactDatosContacto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6-FactDatosContacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5-FactAfiliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5-FactAfiliacion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-FactAportes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1-FactAportes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.2-FactEntrega
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2.2-FactEntrega
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-de-librerias-y-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación de librerías y funciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-inicial-del-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial del logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-consultas-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de consultas SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-y-carga-de-tablas-desde-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión y carga de tablas desde SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-limpieza-y-validacion-de-duplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de limpieza y validación de duplicados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-y-transformacion-de-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición y transformación de columnas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tratamiento-de-errores-afiliacion-mayor-que-retiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamiento de errores: afiliación mayor que retiro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpieza-de-texto-y-eliminacion-de-nan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limpieza de texto y eliminación de NaN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-tabla-de-calendario-y-cross-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de tabla de calendario y Cross Join
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-la-columna-entrega-y-organizacion-de-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la columna Entrega y organización de columnas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardar-en-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar en base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-FactSubsidioVivienda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3-FactSubsidioVivienda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfecold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfecold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-FactTransaccionesVentas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1-FactTransaccionesVentas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio_fijos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio_fijos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-FactServicioSocial%20copy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1-FactServicioSocial copy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 6
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.1-main_encuestasV1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1-main_encuestasV1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importacion-de-librerias-y-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importación de librerías y funciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-inicial-del-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial del logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-consultas-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de consultas SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-y-carga-de-tablas-desde-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión y carga de tablas desde SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-limpieza-y-validacion-de-duplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de limpieza y validación de duplicados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-y-transformacion-de-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición y transformación de columnas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tratamiento-de-errores-afiliacion-mayor-que-retiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamiento de errores: afiliación mayor que retiro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpieza-de-texto-y-eliminacion-de-nan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limpieza de texto y eliminación de NaN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-tabla-de-calendario-y-cross-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de tabla de calendario y Cross Join
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-la-columna-entrega-y-organizacion-de-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la columna Entrega y organización de columnas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-a-la-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión a la base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardar-en-base-de-datos-dwh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar en base de datos DWH
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="22-factentrega">2.2-FactEntrega<a class="headerlink" href="#22-factentrega" title="Permanent link">&para;</a></h1>
+<h3 id="importacion-de-librerias-y-funciones">Importación de librerías y funciones<a class="headerlink" href="#importacion-de-librerias-y-funciones" title="Permanent link">&para;</a></h3>
+<p>Se importan las librerías necesarias (<code>sqlalchemy</code>, <code>pandas</code>, <code>numpy</code>, <code>dateutil</code>, entre otras) y se cargan funciones personalizadas desde el archivo <code>Funciones.py</code>. Además, se ajusta el <code>sys.path</code> para incluir el directorio correspondiente, garantizando la correcta importación del módulo de funciones.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Agrega el directorio al sys.path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../funciones&#39;</span><span class="p">))</span>
+<span class="c1"># Importa las funciones desde el archivo Funciones.py</span>
+<span class="kn">from</span> <span class="nn">Funciones</span> <span class="kn">import</span> <span class="n">guardar_en_dwh</span><span class="p">,</span> <span class="n">StoreDuplicated</span><span class="p">,</span> <span class="n">RemoveDuplicated</span><span class="p">,</span> <span class="n">RemoveErrors</span><span class="p">,</span> <span class="n">obtener_conexion</span><span class="p">,</span> <span class="n">cargar_tablas</span><span class="p">,</span> <span class="n">testfunciones</span><span class="p">,</span> <span class="n">setup_logger</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">testfunciones</span><span class="p">())</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Importacion de funciones correcta, 13-10-2024 12:10
+</code></pre></div>
+
+<h3 id="configuracion-inicial-del-logger">Configuración inicial del logger<a class="headerlink" href="#configuracion-inicial-del-logger" title="Permanent link">&para;</a></h3>
+<p>Se configura el logger para registrar eventos del proceso ETL en el archivo <code>Fact_entrega.log</code>, utilizando el nivel de detalle <code>INFO</code>. También se registra el inicio del proceso, y se almacena la hora de inicio para medir el tiempo total de ejecución.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configuración inicial</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="n">log_filename</span><span class="o">=</span><span class="s1">&#39;Fact_entrega.log&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;COMIENZO ETL&#39;</span><span class="p">)</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:32,172 - INFO - COMIENZO ETL
+</code></pre></div>
+
+<h3 id="definicion-de-consultas-sql">Definición de consultas SQL<a class="headerlink" href="#definicion-de-consultas-sql" title="Permanent link">&para;</a></h3>
+<p>Se define una consulta SQL en el diccionario <code>qr_structure</code> que extrae datos de las tablas <code>subsi09</code> y <code>subsi146</code> a través de un <code>INNER JOIN</code>. La consulta selecciona varias columnas clave relacionadas con fechas, valores y documentos. El proceso de lectura de las consultas se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="n">qr_structure</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;fact_entrega&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;SELECT s09.id AS id, s09.fecanu AS f_anu, s09.fecasi AS f_asig_cuota, s09.fecent AS f_disp_benef, s09.feccon AS f_consign, s09.fecche AS f_cheque, s09.fecfos AS f_fosfec, s09.valcre AS val_credito, s09.valaju AS val_ajuste, s09.documento AS doc_contable, s146.fecenv AS f_envio, s146.feccon AS f_conciliac, s146.fecrec AS f_rechazo, s146.fecpre AS f_prescrip, s146.fecifz AS f_interfaz, s146.fecpto AS f_reemplazo, s146.valor AS val_cuota, s146.mempag AS num_memorando, s146.doccon AS doc_conciliac, s146.docpre AS doc_prescrip FROM subsidio.subsi09 s09 INNER JOIN subsidio.subsi146 s146 ON s09.id = s146.id09&quot;</span>
+<span class="p">}</span>
+
+<span class="n">df_structure</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;LECTURA DE QUERYS&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:32,186 - INFO - LECTURA DE QUERYS
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">qr_structure</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>{&#39;fact_entrega&#39;: &#39;SELECT s09.id AS id, s09.fecanu AS f_anu, s09.fecasi AS f_asig_cuota, s09.fecent AS f_disp_benef, s09.feccon AS f_consign, s09.fecche AS f_cheque, s09.fecfos AS f_fosfec, s09.valcre AS val_credito, s09.valaju AS val_ajuste, s09.documento AS doc_contable, s146.fecenv AS f_envio, s146.feccon AS f_conciliac, s146.fecrec AS f_rechazo, s146.fecpre AS f_prescrip, s146.fecifz AS f_interfaz, s146.fecpto AS f_reemplazo, s146.valor AS val_cuota, s146.mempag AS num_memorando, s146.doccon AS doc_conciliac, s146.docpre AS doc_prescrip FROM subsidio.subsi09 s09 INNER JOIN subsidio.subsi146 s146 ON s09.id = s146.id09&#39;}
+</code></pre></div>
+
+<h3 id="conexion-y-carga-de-tablas-desde-sql">Conexión y carga de tablas desde SQL<a class="headerlink" href="#conexion-y-carga-de-tablas-desde-sql" title="Permanent link">&para;</a></h3>
+<p>Este código se conecta a la base de datos Minerva y carga las tablas especificadas en <code>qr_structure</code> utilizando SQL. Para cada tabla, el proceso de carga es registrado en el <code>logger</code>, y al final se registra el tiempo total que tomó cargar todas las tablas desde MySQL. Esto permite monitorear la ejecución y duración del proceso de carga de datos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Conexion a base Minerva</span>
+<span class="n">motor</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;minerva&#39;</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE MINERVA&#39;</span><span class="p">)</span>
+
+<span class="n">cargar_tablas</span><span class="p">(</span><span class="n">motor</span><span class="p">,</span> <span class="n">qr_structure</span><span class="p">,</span> <span class="n">df_structure</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:32,843 - INFO - CONEXION A BASE MINERVA
+2024-10-13 12:10:33,357 - INFO - Cargando fact_entrega 
+2024-10-13 12:10:34,590 - INFO - Cargada fact_entrega --- 1.23 seconds ---
+2024-10-13 12:10:34,679 - INFO - CARGUE TABLAS DESDE MYSQL --- 1.83 seconds ---
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">df_structure</span><span class="p">[</span><span class="s1">&#39;fact_entrega&#39;</span><span class="p">]</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>f_anu</th>
+      <th>f_asig_cuota</th>
+      <th>f_disp_benef</th>
+      <th>f_consign</th>
+      <th>f_cheque</th>
+      <th>f_fosfec</th>
+      <th>val_credito</th>
+      <th>val_ajuste</th>
+      <th>doc_contable</th>
+      <th>f_envio</th>
+      <th>f_conciliac</th>
+      <th>f_rechazo</th>
+      <th>f_prescrip</th>
+      <th>f_interfaz</th>
+      <th>f_reemplazo</th>
+      <th>val_cuota</th>
+      <th>num_memorando</th>
+      <th>doc_conciliac</th>
+      <th>doc_prescrip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>20985911</td>
+      <td>None</td>
+      <td>2022-02-20</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2022-04-08</td>
+      <td>2022-04-12</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>40243</td>
+      <td>1.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20985912</td>
+      <td>None</td>
+      <td>2022-02-20</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2022-04-08</td>
+      <td>2022-04-12</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>40243</td>
+      <td>1.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>20985913</td>
+      <td>None</td>
+      <td>2022-02-20</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2022-04-08</td>
+      <td>2022-04-12</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>40243</td>
+      <td>1.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>20929805</td>
+      <td>None</td>
+      <td>2022-02-21</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2022-04-08</td>
+      <td>2022-04-12</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>34994</td>
+      <td>1.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20979008</td>
+      <td>None</td>
+      <td>2022-02-20</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2022-05-26</td>
+      <td>2022-06-01</td>
+      <td>2022-02-23</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>34994</td>
+      <td>2.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>39438</th>
+      <td>25809207</td>
+      <td>None</td>
+      <td>2024-09-25</td>
+      <td>2024-09-27</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2024-09-27</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>44491</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>39439</th>
+      <td>25778144</td>
+      <td>None</td>
+      <td>2024-09-18</td>
+      <td>2024-09-24</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2024-09-24</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>44491</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>39440</th>
+      <td>25691627</td>
+      <td>None</td>
+      <td>2024-09-19</td>
+      <td>2024-09-24</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2024-10-11</td>
+      <td>None</td>
+      <td>2024-09-24</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>44491</td>
+      <td>102.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>39441</th>
+      <td>25691628</td>
+      <td>None</td>
+      <td>2024-09-19</td>
+      <td>2024-09-24</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2024-10-11</td>
+      <td>None</td>
+      <td>2024-09-24</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>44491</td>
+      <td>102.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>39442</th>
+      <td>25802299</td>
+      <td>None</td>
+      <td>2024-09-25</td>
+      <td>2024-09-27</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2024-09-27</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>51165</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>39443 rows × 20 columns</p>
+</div>
+
+<h3 id="proceso-de-limpieza-y-validacion-de-duplicados">Proceso de limpieza y validación de duplicados<a class="headerlink" href="#proceso-de-limpieza-y-validacion-de-duplicados" title="Permanent link">&para;</a></h3>
+<p>Se define un proceso para comparar y limpiar los datos de cada tabla en <code>df_structure</code>. Se comparan las columnas listadas en <code>ColumnsToCompare</code> para identificar duplicados y eliminarlos. Luego, se aplica una limpieza adicional para detectar y corregir errores en los datos utilizando las funciones <code>StoreDuplicated</code>, <code>RemoveDuplicated</code>, y <code>RemoveErrors</code>. Los duplicados y errores se registran en archivos específicos para cada tabla y se registra el proceso en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Columnas que deseas comparar y limpiar</span>
+<span class="n">columId</span> <span class="o">=</span> <span class="s1">&#39;id&#39;</span>  <span class="c1"># Ajusta según tu identificador único</span>
+<span class="n">ColumnsToCompare</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;f_anu&#39;</span><span class="p">,</span> <span class="s1">&#39;f_asig_cuota&#39;</span><span class="p">,</span> <span class="s1">&#39;f_disp_benef&#39;</span><span class="p">,</span> <span class="s1">&#39;f_consign&#39;</span><span class="p">,</span> <span class="s1">&#39;f_cheque&#39;</span><span class="p">,</span> <span class="s1">&#39;f_fosfec&#39;</span><span class="p">,</span> 
+                    <span class="s1">&#39;val_credito&#39;</span><span class="p">,</span> <span class="s1">&#39;val_ajuste&#39;</span><span class="p">,</span> <span class="s1">&#39;doc_contable&#39;</span><span class="p">,</span> <span class="s1">&#39;f_envio&#39;</span><span class="p">,</span> <span class="s1">&#39;f_conciliac&#39;</span><span class="p">,</span> 
+                    <span class="s1">&#39;f_rechazo&#39;</span><span class="p">,</span> <span class="s1">&#39;f_prescrip&#39;</span><span class="p">,</span> <span class="s1">&#39;f_interfaz&#39;</span><span class="p">,</span> <span class="s1">&#39;f_reemplazo&#39;</span><span class="p">,</span> <span class="s1">&#39;val_cuota&#39;</span><span class="p">,</span> 
+                    <span class="s1">&#39;num_memorando&#39;</span><span class="p">,</span> <span class="s1">&#39;doc_conciliac&#39;</span><span class="p">,</span> <span class="s1">&#39;doc_prescrip&#39;</span><span class="p">]</span>
+
+<span class="c1"># Iterar sobre los DataFrames en df_structure</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Procesando tabla: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Guardar duplicados</span>
+    <span class="n">StoreDuplicated</span><span class="p">(</span><span class="n">columId</span><span class="p">,</span> <span class="n">ColumnsToCompare</span><span class="p">,</span><span class="n">df</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;duplicados_fact_entrega_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Duplicados guardados: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Eliminar duplicados por fecha</span>
+    <span class="n">df_cleaned</span> <span class="o">=</span> <span class="n">RemoveDuplicated</span><span class="p">(</span><span class="n">columId</span><span class="p">,</span> <span class="s1">&#39;f_disp_benef&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Duplicados por fecha eliminados: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Limpiar errores</span>
+    <span class="n">df_final</span> <span class="o">=</span> <span class="n">RemoveErrors</span><span class="p">(</span><span class="n">df_cleaned</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;errores_fact_entrega_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Registrar información de la limpieza</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Proceso de limpieza y validación de duplicados completado para la tabla: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>Procesando tabla: fact_entrega
+Guardando duplicados
+
+
+2024-10-13 12:10:34,996 - INFO - Duplicados guardados: fact_entrega
+2024-10-13 12:10:35,044 - INFO - Duplicados por fecha eliminados: fact_entrega
+2024-10-13 12:10:35,046 - INFO - Proceso de limpieza y validación de duplicados completado para la tabla: fact_entrega
+
+
+Duplicados guardados en: duplicados_fact_entrega_fact_entrega.csv
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">df_final</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>f_anu</th>
+      <th>f_asig_cuota</th>
+      <th>f_disp_benef</th>
+      <th>f_consign</th>
+      <th>f_cheque</th>
+      <th>f_fosfec</th>
+      <th>val_credito</th>
+      <th>val_ajuste</th>
+      <th>doc_contable</th>
+      <th>f_envio</th>
+      <th>f_conciliac</th>
+      <th>f_rechazo</th>
+      <th>f_prescrip</th>
+      <th>f_interfaz</th>
+      <th>f_reemplazo</th>
+      <th>val_cuota</th>
+      <th>num_memorando</th>
+      <th>doc_conciliac</th>
+      <th>doc_prescrip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>33616</th>
+      <td>7011580</td>
+      <td>None</td>
+      <td>2011-04-19</td>
+      <td>2011-04-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2024-02-29</td>
+      <td>2024-02-29</td>
+      <td>2011-04-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>20346</td>
+      <td>78.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>33615</th>
+      <td>7005252</td>
+      <td>None</td>
+      <td>2011-04-19</td>
+      <td>2011-04-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2011-04-25</td>
+      <td>None</td>
+      <td>2024-02-29</td>
+      <td>2024-02-29</td>
+      <td>20346</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>0011070</td>
+    </tr>
+    <tr>
+      <th>33587</th>
+      <td>6974521</td>
+      <td>None</td>
+      <td>2011-04-19</td>
+      <td>2011-04-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2024-02-29</td>
+      <td>2024-02-29</td>
+      <td>2011-04-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>23397</td>
+      <td>78.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>33586</th>
+      <td>7236763</td>
+      <td>None</td>
+      <td>2011-07-18</td>
+      <td>2011-07-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2024-02-29</td>
+      <td>2024-02-29</td>
+      <td>2011-07-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>23397</td>
+      <td>78.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>33585</th>
+      <td>7203942</td>
+      <td>None</td>
+      <td>2011-07-18</td>
+      <td>2011-07-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2024-02-14</td>
+      <td>2024-02-15</td>
+      <td>2011-07-25</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>23397</td>
+      <td>77.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>28003</th>
+      <td>17431466</td>
+      <td>None</td>
+      <td>0000-00-00</td>
+      <td>NaT</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2023-07-29</td>
+      <td>None</td>
+      <td>2023-08-31</td>
+      <td>2023-08-31</td>
+      <td>31450</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>0010481</td>
+    </tr>
+    <tr>
+      <th>28004</th>
+      <td>17431470</td>
+      <td>None</td>
+      <td>0000-00-00</td>
+      <td>NaT</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2023-07-29</td>
+      <td>None</td>
+      <td>2023-08-31</td>
+      <td>2023-08-31</td>
+      <td>31450</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>0010481</td>
+    </tr>
+    <tr>
+      <th>28005</th>
+      <td>17431471</td>
+      <td>None</td>
+      <td>0000-00-00</td>
+      <td>NaT</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2023-07-29</td>
+      <td>None</td>
+      <td>2023-08-31</td>
+      <td>2023-08-31</td>
+      <td>31450</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>0010481</td>
+    </tr>
+    <tr>
+      <th>28006</th>
+      <td>17431490</td>
+      <td>None</td>
+      <td>0000-00-00</td>
+      <td>NaT</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2023-07-29</td>
+      <td>None</td>
+      <td>2023-08-31</td>
+      <td>2023-08-31</td>
+      <td>31450</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>0010481</td>
+    </tr>
+    <tr>
+      <th>28007</th>
+      <td>17431507</td>
+      <td>None</td>
+      <td>0000-00-00</td>
+      <td>NaT</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>0</td>
+      <td>0</td>
+      <td>None</td>
+      <td>2023-08-25</td>
+      <td>2023-08-25</td>
+      <td>2023-07-29</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>31450</td>
+      <td>54.0</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>39443 rows × 20 columns</p>
+</div>
+
+<h3 id="definicion-y-transformacion-de-columnas">Definición y transformación de columnas<a class="headerlink" href="#definicion-y-transformacion-de-columnas" title="Permanent link">&para;</a></h3>
+<p>Se identifican las columnas numéricas, de texto y de fecha en cada tabla dentro de <code>df_structure</code>. Las columnas de fecha, cuyo nombre comienza con "fec", se convierten a formato <code>datetime</code>. Además, se crean las columnas <code>periodoAfi</code> y <code>periodoRet</code> basadas en las columnas de fechas de afiliación (<code>fecafi</code>) y retiro (<code>fecret</code>), formateando los periodos como <code>AñoMes</code>. Si alguna de estas columnas no se encuentra, se registra una advertencia en el log. El tiempo total del proceso de transformación se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definir columnas con sus tipos</span>
+<span class="n">transfor2_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">numerics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;int16&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float16&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">]</span>
+<span class="n">numericColumns</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">datesColumns</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">textColumns</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="c1"># Obtener columnas numéricas</span>
+    <span class="n">numericColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">numerics</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="c1"># Obtener columnas de fecha</span>
+    <span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;fec&#39;</span><span class="p">)]</span>
+
+    <span class="c1"># Obtener columnas de texto</span>
+    <span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">numericColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">+</span> <span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">])]</span> <span class="o">+</span> \
+                       <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;cod&#39;</span><span class="p">)]</span> <span class="o">+</span> \
+                       <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ced&#39;</span><span class="p">)]</span> <span class="o">+</span> \
+                       <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">)]</span>
+
+    <span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]))</span>
+
+    <span class="c1"># Convertir columnas de fecha a datetime</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">datesColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Crear nuevas columnas &#39;periodoAfi&#39; y &#39;periodoRet&#39;</span>
+    <span class="k">if</span> <span class="s1">&#39;fecafi&#39;</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="s1">&#39;fecret&#39;</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;periodoAfi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;fecafi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;fecafi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">188001</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;periodoRet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;fecret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;fecret&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">300001</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Columnas &quot;fecafi&quot; y/o &quot;fecret&quot; no encontradas en la tabla para </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TRANSFORMACION 2 --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">transfor2_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:35,141 - WARNING - Columnas &quot;fecafi&quot; y/o &quot;fecret&quot; no encontradas en la tabla para fact_entrega.
+2024-10-13 12:10:35,143 - INFO - TRANSFORMACION 2 --- 0.02 seconds ---
+</code></pre></div>
+
+<h3 id="tratamiento-de-errores-afiliacion-mayor-que-retiro">Tratamiento de errores: afiliación mayor que retiro<a class="headerlink" href="#tratamiento-de-errores-afiliacion-mayor-que-retiro" title="Permanent link">&para;</a></h3>
+<p>Se filtran los registros en cada tabla de <code>df_structure</code> donde el periodo de afiliación (<code>periodoAfi</code>) es menor o igual al periodo de retiro (<code>periodoRet</code>). Si las columnas <code>periodoAfi</code> o <code>periodoRet</code> no están presentes en alguna tabla, se genera una advertencia en el log. El tiempo total de este proceso de corrección de errores se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tratamiento de errores afi &gt; ret</span>
+<span class="n">trataerro_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="c1"># Filtrar filas donde periodoAfi es menor o igual a periodoRet</span>
+    <span class="k">if</span> <span class="s1">&#39;periodoAfi&#39;</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="s1">&#39;periodoRet&#39;</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;periodoAfi&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="s1">&#39;periodoRet&#39;</span><span class="p">]]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Columnas &quot;periodoAfi&quot; y/o &quot;periodoRet&quot; no encontradas en la tabla para </span><span class="si">{</span><span class="n">ky</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TRATAMIENTO ERRORES --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">trataerro_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:35,156 - WARNING - Columnas &quot;periodoAfi&quot; y/o &quot;periodoRet&quot; no encontradas en la tabla para fact_entrega.
+2024-10-13 12:10:35,161 - INFO - TRATAMIENTO ERRORES --- 0.00 seconds ---
+</code></pre></div>
+
+<h3 id="limpieza-de-texto-y-eliminacion-de-nan">Limpieza de texto y eliminación de NaN<a class="headerlink" href="#limpieza-de-texto-y-eliminacion-de-nan" title="Permanent link">&para;</a></h3>
+<p>Se realiza una limpieza de las columnas de texto en cada tabla de <code>df_structure</code>. Las cadenas de texto se convierten a mayúsculas, se eliminan los espacios en blanco al inicio y al final, y se reemplazan los valores <code>"NAN"</code> y <code>"NONE"</code> por <code>NaN</code>. El tiempo total del proceso de limpieza se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Limpieza de texto y eliminación de NaN</span>
+<span class="n">limpieza_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="n">textColumns</span><span class="p">[</span><span class="n">ky</span><span class="p">]]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;NAN&#39;</span><span class="p">,</span> <span class="s1">&#39;NONE&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;LIMPIEZA --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">limpieza_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>C:\Users\GESTION GEAM\AppData\Local\Temp\ipykernel_6048\3248070240.py:6: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+  df_structure[ky][textColumns[ky]] = df_structure[ky][textColumns[ky]].replace([&#39;NAN&#39;, &#39;NONE&#39;], np.nan)
+2024-10-13 12:10:35,812 - INFO - LIMPIEZA --- 0.63 seconds ---
+</code></pre></div>
+
+<h3 id="creacion-de-tabla-de-calendario-y-cross-join">Creación de tabla de calendario y <code>Cross Join</code><a class="headerlink" href="#creacion-de-tabla-de-calendario-y-cross-join" title="Permanent link">&para;</a></h3>
+<p>Se genera un dataframe de calendario que contiene periodos mensuales de los últimos 18 meses. Luego, se realiza un <code>cross join</code> entre el dataframe <code>df_struc_Total</code> (que contiene los datos de la consulta <code>fact_entrega</code>) y el calendario utilizando una clave auxiliar <code>kp</code>. Este proceso permite combinar todos los periodos con los registros existentes. El tiempo total de la operación se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Concatenación de tablas (si hubiese más de una tabla, en este caso se omitirá ya que solo tenemos subsi11)</span>
+<span class="c1"># df_struc_Total = pd.concat(list(df_structure.values()), ignore_index=True)</span>
+
+<span class="c1"># Creación tabla calendario y cross join</span>
+<span class="n">cross_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">dfCalendar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">18</span><span class="p">),</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">(),</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fechas&#39;</span><span class="p">])</span>
+<span class="n">dfCalendar</span><span class="p">[</span><span class="s1">&#39;Periodo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfCalendar</span><span class="p">[</span><span class="s1">&#39;Fechas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">dfCalendar</span><span class="p">[</span><span class="s1">&#39;Fechas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">dfCalendar</span> <span class="o">=</span> <span class="n">dfCalendar</span><span class="p">[[</span><span class="s1">&#39;Periodo&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Cross join</span>
+<span class="n">df_struc_Total</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="s1">&#39;fact_entrega&#39;</span><span class="p">]</span>
+<span class="n">df_struc_Total</span><span class="p">[</span><span class="s1">&#39;kp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dfCalendar</span><span class="p">[</span><span class="s1">&#39;kp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">FactEntregaTotal</span> <span class="o">=</span> <span class="n">df_struc_Total</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfCalendar</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;kp&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TRANSFORMACION 3 CROSS JOIN --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cross_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:36,184 - INFO - TRANSFORMACION 3 CROSS JOIN --- 0.36 seconds ---
+</code></pre></div>
+
+<h3 id="creacion-de-la-columna-entrega-y-organizacion-de-columnas">Creación de la columna <code>Entrega</code> y organización de columnas<a class="headerlink" href="#creacion-de-la-columna-entrega-y-organizacion-de-columnas" title="Permanent link">&para;</a></h3>
+<p>Se verifica si la columna <code>periodoRet</code> está presente en el dataframe <code>FactEntregaTotal</code>. Si existe, se crea la columna <code>Entrega</code> indicando <code>'si'</code> si el periodo actual está dentro del periodo de retiro, y <code>'no'</code> en caso contrario. Si no está presente la columna <code>periodoRet</code>, se asigna <code>'no'</code> por defecto. Luego, se eliminan las columnas innecesarias (como <code>kp</code>) y se reorganizan las columnas colocando <code>Periodo</code> en la primera posición y <code>Entrega</code> en la tercera.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verificar que &#39;periodoRet&#39; existe en el DataFrame</span>
+<span class="k">if</span> <span class="s1">&#39;periodoRet&#39;</span> <span class="ow">in</span> <span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="c1"># Creación de la columna &#39;Entrega&#39;</span>
+    <span class="n">FactEntregaTotal</span><span class="p">[</span><span class="s1">&#39;Entrega&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">FactEntregaTotal</span><span class="p">[</span><span class="s1">&#39;Periodo&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">FactEntregaTotal</span><span class="p">[</span><span class="s1">&#39;periodoRet&#39;</span><span class="p">]),</span>
+        <span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span>
+    <span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;&#39;periodoRet&#39; no encontrado en FactEntregaTotal.&quot;</span><span class="p">)</span>
+    <span class="c1"># Si &#39;periodoRet&#39; no está disponible, podrías definir una lógica alternativa o asignar &#39;no&#39; por defecto</span>
+    <span class="n">FactEntregaTotal</span><span class="p">[</span><span class="s1">&#39;Entrega&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;no&#39;</span>
+
+<span class="c1"># Eliminar columnas innecesarias</span>
+<span class="n">FactEntregaTotal</span> <span class="o">=</span> <span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;kp&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Organizar Columnas</span>
+<span class="n">f_column</span> <span class="o">=</span> <span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Periodo&#39;</span><span class="p">)</span>
+<span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Periodo&#39;</span><span class="p">,</span> <span class="n">f_column</span><span class="p">)</span>
+<span class="n">f_column</span> <span class="o">=</span> <span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Entrega&#39;</span><span class="p">)</span>
+<span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Entrega&#39;</span><span class="p">,</span> <span class="n">f_column</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:36,196 - WARNING - &#39;periodoRet&#39; no encontrado en FactEntregaTotal.
+</code></pre></div>
+
+<h3 id="conexion-a-la-base-de-datos-dwh">Conexión a la base de datos DWH<a class="headerlink" href="#conexion-a-la-base-de-datos-dwh" title="Permanent link">&para;</a></h3>
+<p>Se establece la conexión con la base de datos DWH utilizando la función <code>Conexion_dwh()</code> y se crea el motor de conexión con <code>create_engine()</code>. El evento de conexión exitosa se registra en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
+<span class="c1">#Conexion a base dwh</span>
+<span class="n">motor2</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;dwh&#39;</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE DWH&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:36,343 - INFO - CONEXION A BASE DWH
+</code></pre></div>
+
+<h3 id="guardar-en-base-de-datos-dwh">Guardar en base de datos DWH<a class="headerlink" href="#guardar-en-base-de-datos-dwh" title="Permanent link">&para;</a></h3>
+<p>Se guarda el dataframe <code>FactEntregaTotal</code> en la tabla <code>BD_FactEntrega</code> de la base de datos DWH. Si la tabla ya existe, se reemplaza su contenido con los nuevos datos. Se registra el tiempo total de almacenamiento en el log y, una vez completado el proceso, también se registra el tiempo total de ejecución del proceso ETL.</p>
+<div class="highlight"><pre><span></span><code><span class="n">guardar_en_dwh</span><span class="p">(</span><span class="n">FactEntregaTotal</span><span class="p">,</span> <span class="s1">&#39;BD_FactEntrega&#39;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:10:36,354 - INFO - CONEXION A BASE DWH
+2024-10-13 12:10:36,852 - INFO - Almacenando tabla única en DWH como BD_FactEntrega
+2024-10-13 12:11:51,844 - INFO - Tabla almacenada correctamente.
+2024-10-13 12:11:52,636 - INFO - ALMACENAMIENTO --- 76.28 seconds ---
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>[&#39;Periodo&#39;,
+ &#39;id&#39;,
+ &#39;Entrega&#39;,
+ &#39;f_anu&#39;,
+ &#39;f_asig_cuota&#39;,
+ &#39;f_disp_benef&#39;,
+ &#39;f_consign&#39;,
+ &#39;f_cheque&#39;,
+ &#39;f_fosfec&#39;,
+ &#39;val_credito&#39;,
+ &#39;val_ajuste&#39;,
+ &#39;doc_contable&#39;,
+ &#39;f_envio&#39;,
+ &#39;f_conciliac&#39;,
+ &#39;f_rechazo&#39;,
+ &#39;f_prescrip&#39;,
+ &#39;f_interfaz&#39;,
+ &#39;f_reemplazo&#39;,
+ &#39;val_cuota&#39;,
+ &#39;num_memorando&#39;,
+ &#39;doc_conciliac&#39;,
+ &#39;doc_prescrip&#39;]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Iniciar la agregación</span>
+<span class="n">tagreg_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;INICIO DE AGREGACIÓN DE DATOS&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agrupar FactEntregaTotal</span>
+<span class="c1"># Se agrupa por &#39;Periodo&#39; y &#39;id&#39; para reducir la cantidad de registros finales</span>
+<span class="c1"># Se agregan columnas clave según las instrucciones proporcionadas</span>
+<span class="n">FactEntregaTotal</span><span class="p">[</span><span class="s1">&#39;Periodo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">FactEntregaTotal</span><span class="p">[</span><span class="s1">&#39;Periodo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># Extraer el formato yyyymm</span>
+<span class="c1">#Comentar la siguiente linea en caso de necesitar continuar con la agregacion original y solo estructurar las columnas</span>
+<span class="c1">#FactEntregaTotal[&#39;Periodo&#39;] = (FactEntregaTotal[&#39;Periodo&#39;].astype(int) // 3 * 3).astype(str)  # Agrupar cada 3 meses</span>
+<span class="n">FactEntregaAgg</span> <span class="o">=</span> <span class="n">FactEntregaTotal</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="s1">&#39;Periodo&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;Periodo&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Entrega&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_anu&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_asig_cuota&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_disp_benef&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_consign&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_cheque&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_fosfec&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;val_credito&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;val_ajuste&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;doc_contable&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_envio&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_conciliac&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_rechazo&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_prescrip&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_interfaz&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;f_reemplazo&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;val_cuota&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;num_memorando&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;doc_conciliac&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;doc_prescrip&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span>
+<span class="p">})</span>
+
+<span class="c1"># Asignar el DataFrame agrupado a FactEntregaTotal para la siguiente etapa</span>
+<span class="c1">#FactEntregaTotal = FactEntregaAgg</span>
+
+
+<span class="c1"># Finalizar la agregación</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;AGREGACIÓN FINALIZADA --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tagreg_start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code>2024-10-13 12:11:52,655 - INFO - INICIO DE AGREGACIÓN DE DATOS
+2024-10-13 12:11:53,719 - INFO - AGREGACIÓN FINALIZADA --- 1.06 seconds ---
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/init_mermaid.js"></script>
+      
+    
+  </body>
+</html>

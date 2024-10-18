@@ -1,0 +1,2114 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../codigo/funciones/">
+      
+      
+        <link rel="next" href="../1.2-EstandarAfiliados2.0/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Introduccion - Documentación del Proyecto ETL - Completo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#explicacion-del-proceso-etl-bloque1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-header__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación del Proyecto ETL - Completo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduccion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentación del Proyecto ETL - Completo" class="md-nav__button md-logo" aria-label="Documentación del Proyecto ETL - Completo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentación del Proyecto ETL - Completo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación y Configuración
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codigo/funciones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funciones.py
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodegas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodegas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#12-estandarafiliados20" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 - EstandarAfiliados2.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 - EstandarAfiliados2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-calendariomensual" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 - CalendarioMensual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 - CalendarioMensual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-errores_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-dimensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 - Dimensiones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 - Dimensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-factafiliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 - FactAfiliacion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 - FactAfiliacion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-factdatoscontacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 - FactDatosContacto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 - FactDatosContacto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacion-y-carga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacion-y-carga_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramas-de-cada-sesion-por-separado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagramas de cada sesión por separado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagramas de cada sesión por separado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-entidad-relacion-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Entidad-Relación (ER)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Procesos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2-EstandarAfiliados2.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2-EstandarAfiliados2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4-Dimensiones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4-Dimensiones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3-CalendarioMensual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3-CalendarioMensual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6-FactDatosContacto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6-FactDatosContacto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5-FactAfiliacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5-FactAfiliacion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1-FactAportes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1-FactAportes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2-FactEntrega/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2-FactEntrega
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-FactSubsidioVivienda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3-FactSubsidioVivienda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4-CrearFactFosfecold/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4-CrearFactFosfecold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-FactTransaccionesVentas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1-FactTransaccionesVentas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1-FactColegio_fijos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1-FactColegio_fijos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1-FactServicioSocial%20copy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1-FactServicioSocial copy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bodega 6
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bodega 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntroBodega6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.1-main_encuestasV1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1-main_encuestasV1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#12-estandarafiliados20" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 - EstandarAfiliados2.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 - EstandarAfiliados2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-calendariomensual" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 - CalendarioMensual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 - CalendarioMensual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-errores_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-dimensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 - Dimensiones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 - Dimensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-factafiliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 - FactAfiliacion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 - FactAfiliacion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraccion-transformacion-y-carga-de-datos_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracción, Transformación y Carga de Datos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-factdatoscontacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 - FactDatosContacto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 - FactDatosContacto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-proceso-etl_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicación del Proceso ETL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacion-y-carga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragmentos-de-codigo-importantes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fragmentos de Código Importantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-proceso_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Proceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-er_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama ER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacion-y-carga_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformación y Carga
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramas-de-cada-sesion-por-separado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagramas de cada sesión por separado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagramas de cada sesión por separado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-entidad-relacion-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Entidad-Relación (ER)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Procesos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="explicacion-del-proceso-etl-bloque1">Explicación del Proceso ETL - Bloque1<a class="headerlink" href="#explicacion-del-proceso-etl-bloque1" title="Permanent link">&para;</a></h1>
+<p>Este documento proporciona una explicación detallada del proceso ETL (Extracción, Transformación y Carga de datos) realizado en el archivo <strong>Bloque1</strong>. El flujo se encuentra dividido en distintas sesiones:</p>
+<ul>
+<li><strong>1.2 - EstandarAfiliados2.0</strong></li>
+<li><strong>1.3 - CalendarioMensual</strong></li>
+<li><strong>1.4 - Dimensiones</strong></li>
+<li><strong>1.5 - FactAfiliacion</strong></li>
+<li><strong>1.6 - FactDatosContacto</strong></li>
+</ul>
+<p>Cada una de estas sesiones representa una etapa clave del procesamiento de datos, proporcionando una estructura clara para garantizar la eficiencia y la consistencia de la información tratada. A continuación, se explica cada uno de los componentes.</p>
+<h2 id="12-estandarafiliados20">1.2 - EstandarAfiliados2.0<a class="headerlink" href="#12-estandarafiliados20" title="Permanent link">&para;</a></h2>
+<h3 id="explicacion-del-proceso-etl">Explicación del Proceso ETL<a class="headerlink" href="#explicacion-del-proceso-etl" title="Permanent link">&para;</a></h3>
+<p>Este módulo se encarga de la estandarización de los datos de los afiliados. La estandarización incluye la limpieza de datos, la transformación a formatos consistentes y la validación para asegurar la calidad de los datos antes de su integración en la base de datos.</p>
+<h3 id="extraccion-transformacion-y-carga-de-datos">Extracción, Transformación y Carga de Datos<a class="headerlink" href="#extraccion-transformacion-y-carga-de-datos" title="Permanent link">&para;</a></h3>
+<p>Los datos se extraen de fuentes externas como archivos CSV o tablas SQL. Posteriormente, se transforman aplicando reglas de negocio para garantizar la coherencia. Finalmente, se cargan en una tabla de afiliados estandarizada.</p>
+<h3 id="fragmentos-de-codigo-importantes">Fragmentos de Código Importantes<a class="headerlink" href="#fragmentos-de-codigo-importantes" title="Permanent link">&para;</a></h3>
+<p>A continuación, se presentan algunos fragmentos de código que son fundamentales para la extracción, transformación y carga de datos en esta sesión:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+
+<span class="c1"># Creación de la conexión con la base de datos</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql://usuario:password@host:puerto/basedatos&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extracción de datos desde CSV</span>
+<span class="n">df_afiliados</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;afiliados.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Limpieza y estandarización de datos</span>
+<span class="n">df_afiliados</span><span class="p">[</span><span class="s1">&#39;fecha_nacimiento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_afiliados</span><span class="p">[</span><span class="s1">&#39;fecha_nacimiento&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="n">df_afiliados</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_afiliados</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="c1"># Carga de datos a la base de datos</span>
+<span class="n">df_afiliados</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;afiliados_estandarizados&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="diagrama-de-proceso">Diagrama de Proceso<a class="headerlink" href="#diagrama-de-proceso" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>---
+config:
+  theme: default
+  look: neo
+  layout: elk
+---
+
+flowchart TD
+    A[Inicio] --&gt; B[Importar Librerías]
+    B --&gt; C[Crear Conexiones]
+    C --&gt; D[Extracción de Datos]
+    D --&gt; E[Transformación de Datos]
+    E --&gt; F[Carga de Datos]
+    F --&gt; G[Validación y Manejo de Errores]
+    G --&gt; H[Fin]</code></pre>
+<h3 id="diagrama-er">Diagrama ER<a class="headerlink" href="#diagrama-er" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>---
+config:
+  theme: default
+  look: neo
+  layout: elk
+---
+erDiagram
+    Afiliados ||--o{ EstandarAfiliados : "estandariza"</code></pre>
+<h3 id="manejo-de-errores">Manejo de Errores<a class="headerlink" href="#manejo-de-errores" title="Permanent link">&para;</a></h3>
+<p>Se configuran mecanismos de registro y manejo de errores para garantizar que los problemas encontrados durante el proceso sean registrados correctamente y el proceso pueda ser depurado en el futuro.</p>
+<h2 id="13-calendariomensual">1.3 - CalendarioMensual<a class="headerlink" href="#13-calendariomensual" title="Permanent link">&para;</a></h2>
+<h3 id="explicacion-del-proceso-etl_1">Explicación del Proceso ETL<a class="headerlink" href="#explicacion-del-proceso-etl_1" title="Permanent link">&para;</a></h3>
+<p>El módulo CalendarioMensual se encarga de definir y gestionar las actividades ETL mensuales, asegurando que cada proceso de carga se realice en el momento adecuado. Esto permite una planificación eficiente del flujo de datos.</p>
+<h3 id="extraccion-transformacion-y-carga-de-datos_1">Extracción, Transformación y Carga de Datos<a class="headerlink" href="#extraccion-transformacion-y-carga-de-datos_1" title="Permanent link">&para;</a></h3>
+<p>Se extraen datos de diferentes períodos para organizarlos en un calendario mensual. Las fechas se utilizan para definir la planificación de la carga, facilitando análisis temporales consistentes.</p>
+<h3 id="fragmentos-de-codigo-importantes_1">Fragmentos de Código Importantes<a class="headerlink" href="#fragmentos-de-codigo-importantes_1" title="Permanent link">&para;</a></h3>
+<p>A continuación, se muestran fragmentos de código para la creación y gestión del calendario mensual:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1"># Definir el rango de fechas para el calendario mensual</span>
+<span class="n">fecha_inicio</span> <span class="o">=</span> <span class="s1">&#39;2023-01-01&#39;</span>
+<span class="n">fecha_fin</span> <span class="o">=</span> <span class="s1">&#39;2023-12-31&#39;</span>
+
+<span class="c1"># Creación del DataFrame del calendario</span>
+<span class="n">df_calendario</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">fecha_inicio</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">fecha_fin</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fecha&#39;</span><span class="p">)</span>
+
+<span class="c1"># Añadir columnas adicionales</span>
+<span class="n">df_calendario</span><span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_calendario</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df_calendario</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_calendario</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_calendario</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="diagrama-de-proceso_1">Diagrama de Proceso<a class="headerlink" href="#diagrama-de-proceso_1" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Inicio] --&gt; B[Importar Librerías]
+    B --&gt; C[Crear Conexiones]
+    C --&gt; D[Configurar Calendario]
+    D --&gt; E[Extracción de Datos]
+    E --&gt; F[Organización por Fechas]
+    F --&gt; G[Carga de Datos]
+    G --&gt; H[Validación y Manejo de Errores]
+    H --&gt; I[Fin]</code></pre>
+<h3 id="diagrama-er_1">Diagrama ER<a class="headerlink" href="#diagrama-er_1" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>erDiagram
+    Calendario ||--o{ FactAfiliacion : "planifica"</code></pre>
+<h3 id="manejo-de-errores_1">Manejo de Errores<a class="headerlink" href="#manejo-de-errores_1" title="Permanent link">&para;</a></h3>
+<p>Se verifica que los datos sean consistentes en el calendario y se asegura la integridad de los mismos antes de la carga final.</p>
+<h2 id="14-dimensiones">1.4 - Dimensiones<a class="headerlink" href="#14-dimensiones" title="Permanent link">&para;</a></h2>
+<h3 id="explicacion-del-proceso-etl_2">Explicación del Proceso ETL<a class="headerlink" href="#explicacion-del-proceso-etl_2" title="Permanent link">&para;</a></h3>
+<p>Este módulo se encarga de definir y gestionar las dimensiones del modelo de datos, tales como afiliados, productos, o cualquier otra entidad relevante. Las dimensiones son tablas descriptivas que proporcionan contexto a los datos transaccionales, enriqueciendo el análisis.</p>
+<h3 id="extraccion-transformacion-y-carga">Extracción, Transformación y Carga<a class="headerlink" href="#extraccion-transformacion-y-carga" title="Permanent link">&para;</a></h3>
+<p>Los datos se extraen, se procesan para definir dimensiones consistentes, y luego se cargan para ser utilizados en consultas y análisis posteriores.</p>
+<h3 id="fragmentos-de-codigo-importantes_2">Fragmentos de Código Importantes<a class="headerlink" href="#fragmentos-de-codigo-importantes_2" title="Permanent link">&para;</a></h3>
+<p>A continuación, se presentan algunos fragmentos de código relevantes para la creación de las dimensiones:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+
+<span class="c1"># Creación de la conexión con la base de datos</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql://usuario:password@host:puerto/basedatos&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extracción de datos desde la tabla de afiliados</span>
+<span class="n">df_afiliados</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM afiliados&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Creación de la dimensión afiliados</span>
+<span class="n">df_dim_afiliados</span> <span class="o">=</span> <span class="n">df_afiliados</span><span class="p">[[</span><span class="s1">&#39;afiliado_id&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Carga de la dimensión a la base de datos</span>
+<span class="n">df_dim_afiliados</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;dim_afiliados&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="diagrama-de-proceso_2">Diagrama de Proceso<a class="headerlink" href="#diagrama-de-proceso_2" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Inicio] --&gt; B[Importar Librerías]
+    B --&gt; C[Crear Conexiones]
+    C --&gt; D[Extracción de Datos]
+    D --&gt; E[Transformación en Dimensiones]
+    E --&gt; F[Carga de Dimensiones]
+    F --&gt; G[Fin]</code></pre>
+<h3 id="diagrama-er_2">Diagrama ER<a class="headerlink" href="#diagrama-er_2" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>erDiagram
+    Dimensiones ||--o{ FactAfiliacion : "describe"</code></pre>
+<h3 id="extraccion-transformacion-y-carga_1">Extracción, Transformación y Carga<a class="headerlink" href="#extraccion-transformacion-y-carga_1" title="Permanent link">&para;</a></h3>
+<p>Los datos son extraídos, transformados en dimensiones bien definidas, y luego cargados para ser utilizados en el modelo dimensional.</p>
+<h2 id="15-factafiliacion">1.5 - FactAfiliacion<a class="headerlink" href="#15-factafiliacion" title="Permanent link">&para;</a></h2>
+<h3 id="explicacion-del-proceso-etl_3">Explicación del Proceso ETL<a class="headerlink" href="#explicacion-del-proceso-etl_3" title="Permanent link">&para;</a></h3>
+<p>El módulo FactAfiliacion crea una tabla de hechos que almacena los datos transaccionales relacionados con la afiliación. Esto permite realizar análisis históricos sobre las afiliaciones, tales como el comportamiento de los afiliados a lo largo del tiempo.</p>
+<h3 id="extraccion-transformacion-y-carga-de-datos_2">Extracción, Transformación y Carga de Datos<a class="headerlink" href="#extraccion-transformacion-y-carga-de-datos_2" title="Permanent link">&para;</a></h3>
+<p>Se extraen los datos de afiliación, se transforman para adaptarse al esquema de la tabla de hechos y se cargan en la base de datos para análisis y generación de reportes.</p>
+<h3 id="fragmentos-de-codigo-importantes_3">Fragmentos de Código Importantes<a class="headerlink" href="#fragmentos-de-codigo-importantes_3" title="Permanent link">&para;</a></h3>
+<p>A continuación, algunos fragmentos de código utilizados para la creación de la tabla de hechos de afiliación:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+
+<span class="c1"># Creación de la conexión con la base de datos</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql://usuario:password@host:puerto/basedatos&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extracción de datos transaccionales</span>
+<span class="n">df_transacciones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM transacciones_afiliacion&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Transformación de datos para adaptarse al esquema de hechos</span>
+<span class="n">df_fact_afiliacion</span> <span class="o">=</span> <span class="n">df_transacciones</span><span class="p">[[</span><span class="s1">&#39;afiliado_id&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_afiliacion&#39;</span><span class="p">,</span> <span class="s1">&#39;tipo_afiliacion&#39;</span><span class="p">]]</span>
+<span class="n">df_fact_afiliacion</span><span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_fact_afiliacion</span><span class="p">[</span><span class="s1">&#39;fecha_afiliacion&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+
+<span class="c1"># Carga de la tabla de hechos</span>
+<span class="n">df_fact_afiliacion</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;fact_afiliacion&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="diagrama-de-proceso_3">Diagrama de Proceso<a class="headerlink" href="#diagrama-de-proceso_3" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Inicio] --&gt; B[Importar Librerías]
+    B --&gt; C[Crear Conexiones]
+    C --&gt; D[Extracción de Datos]
+    D --&gt; E[Transformación de Datos]
+    E --&gt; F[Carga en Tabla de Hechos]
+    F --&gt; G[Validación y Manejo de Errores]
+    G --&gt; H[Fin]</code></pre>
+<h3 id="diagrama-er_3">Diagrama ER<a class="headerlink" href="#diagrama-er_3" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>erDiagram
+    Afiliados ||--o{ FactAfiliacion : "contiene"
+    Calendario ||--o{ FactAfiliacion : "establece"
+    Dimensiones ||--o{ FactAfiliacion : "describe"</code></pre>
+<h3 id="extraccion-transformacion-y-carga-de-datos_3">Extracción, Transformación y Carga de Datos<a class="headerlink" href="#extraccion-transformacion-y-carga-de-datos_3" title="Permanent link">&para;</a></h3>
+<p>Los datos se transforman para cumplir con el esquema de una tabla de hechos y se cargan en la base de datos para su posterior consulta.</p>
+<h2 id="16-factdatoscontacto">1.6 - FactDatosContacto<a class="headerlink" href="#16-factdatoscontacto" title="Permanent link">&para;</a></h2>
+<h3 id="explicacion-del-proceso-etl_4">Explicación del Proceso ETL<a class="headerlink" href="#explicacion-del-proceso-etl_4" title="Permanent link">&para;</a></h3>
+<p>El módulo FactDatosContacto gestiona una tabla de hechos que contiene información sobre los datos de contacto de los afiliados. Estos datos incluyen teléfonos, correos electrónicos y direcciones, fundamentales para la comunicación y seguimiento de los afiliados.</p>
+<h3 id="transformacion-y-carga">Transformación y Carga<a class="headerlink" href="#transformacion-y-carga" title="Permanent link">&para;</a></h3>
+<p>Los datos se extraen, se limpian y se transforman para estandarizar la información de contacto. Luego, se cargan en la base de datos para que puedan ser utilizados en análisis y comunicaciones.</p>
+<h3 id="fragmentos-de-codigo-importantes_4">Fragmentos de Código Importantes<a class="headerlink" href="#fragmentos-de-codigo-importantes_4" title="Permanent link">&para;</a></h3>
+<p>A continuación, se presentan algunos fragmentos de código utilizados para manejar los datos de contacto:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+
+<span class="c1"># Creación de la conexión con la base de datos</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql://usuario:password@host:puerto/basedatos&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extracción de datos de contacto</span>
+<span class="n">df_contacto</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datos_contacto.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Limpieza y estandarización de los datos de contacto</span>
+<span class="n">df_contacto</span><span class="p">[</span><span class="s1">&#39;telefono&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_contacto</span><span class="p">[</span><span class="s1">&#39;telefono&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_contacto</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_contacto</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># Carga de los datos de contacto estandarizados</span>
+<span class="n">df_contacto</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;fact_datos_contacto&#39;</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="diagrama-de-proceso_4">Diagrama de Proceso<a class="headerlink" href="#diagrama-de-proceso_4" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Inicio] --&gt; B[Importar Librerías]
+    B --&gt; C[Crear Conexiones]
+    C --&gt; D[Extracción de Datos de Contacto]
+    D --&gt; E[Transformación de Datos]
+    E --&gt; F[Carga de Datos]
+    F --&gt; G[Validación y Manejo de Errores]
+    G --&gt; H[Fin]</code></pre>
+<h3 id="diagrama-er_4">Diagrama ER<a class="headerlink" href="#diagrama-er_4" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>erDiagram
+    Afiliados ||--o{ FactDatosContacto : "contiene"</code></pre>
+<h3 id="transformacion-y-carga_1">Transformación y Carga<a class="headerlink" href="#transformacion-y-carga_1" title="Permanent link">&para;</a></h3>
+<p>La transformación está orientada a estandarizar la información de contacto para garantizar la calidad y consistencia de los datos, mejorando su utilización en análisis y comunicaciones.</p>
+<h2 id="diagramas-de-cada-sesion-por-separado">Diagramas de cada sesión por separado<a class="headerlink" href="#diagramas-de-cada-sesion-por-separado" title="Permanent link">&para;</a></h2>
+<h3 id="diagrama-de-entidad-relacion-er">Diagrama de Entidad-Relación (ER)<a class="headerlink" href="#diagrama-de-entidad-relacion-er" title="Permanent link">&para;</a></h3>
+<p>El diagrama ER muestra la relación entre las diferentes tablas utilizadas a lo largo del proceso ETL. Incluye las tablas de dimensiones y las tablas de hechos (FactAfiliacion y FactDatosContacto), así como las relaciones entre estas.</p>
+<pre class="mermaid"><code>erDiagram
+    Afiliados ||--o{ FactAfiliacion : "contiene"
+    Afiliados ||--o{ FactDatosContacto : "contiene"
+    Calendario ||--o{ FactAfiliacion : "establece"
+    Dimensiones ||--o{ FactAfiliacion : "describe"</code></pre>
+<h3 id="diagrama-de-procesos">Diagrama de Procesos<a class="headerlink" href="#diagrama-de-procesos" title="Permanent link">&para;</a></h3>
+<p>El siguiente diagrama muestra las etapas principales del proceso ETL desde la extracción, pasando por la transformación hasta la carga final en la base de datos.</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Inicio] --&gt; B[Importar Librerías]
+    B --&gt; C[Crear Conexiones]
+    C --&gt; D[Extracción de Datos]
+    D --&gt; E[Transformación de Datos]
+    E --&gt; F[Carga de Datos]
+    F --&gt; G[Validación y Manejo de Errores]
+    G --&gt; H[Fin]</code></pre>
+<p>Este documento proporciona una estructura clara y completa para explicar cada uno de los componentes del proceso ETL, permitiendo así una mejor comprensión del flujo de datos para los clientes interesados.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/init_mermaid.js"></script>
+      
+    
+  </body>
+</html>

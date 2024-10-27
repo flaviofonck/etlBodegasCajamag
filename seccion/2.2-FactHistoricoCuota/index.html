@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../2.2-FactHistoricoCuota/">
+        <link rel="prev" href="../2.1-FactHistoricoAportesTotales/">
       
       
-        <link rel="next" href="../2.4-FactFosfec/">
+        <link rel="next" href="../2.3-FactSubsidioVivienda/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>2.3 FactSubsidioVivienda - Optimización CAJAMAG - Gobierno de Datos</title>
+        <title>2.2 FactHistoricoCuota - Optimización CAJAMAG - Gobierno de Datos</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#23-fact-subsidio-vivienda" class="md-skip">
+        <a href="#22-fact-historico-cuota" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3 FactSubsidioVivienda
+              2.2 FactHistoricoCuota
             
           </span>
         </div>
@@ -689,27 +689,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.2-FactHistoricoCuota/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.2 FactHistoricoCuota
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -726,7 +705,7 @@
           
   
   <span class="md-ellipsis">
-    2.3 FactSubsidioVivienda
+    2.2 FactHistoricoCuota
   </span>
   
 
@@ -737,7 +716,7 @@
         
   
   <span class="md-ellipsis">
-    2.3 FactSubsidioVivienda
+    2.2 FactHistoricoCuota
   </span>
   
 
@@ -802,54 +781,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuracion-inicial-del-logger" class="md-nav__link">
+  <a href="#configuracion-del-logger-y-comienzo-del-proceso-etl" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuración inicial del logger
+      Configuración del logger y comienzo del proceso ETL
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#definicion-de-consultas-sql-para-extraccion-de-datos-de-vivienda" class="md-nav__link">
+  <a href="#conexion-y-procesamiento-de-datos-en-base-minerva" class="md-nav__link">
     <span class="md-ellipsis">
-      Definición de Consultas SQL para Extracción de Datos de Vivienda
+      Conexión y Procesamiento de Datos en Base Minerva
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#conexion-y-carga-de-tablas-desde-sql" class="md-nav__link">
+  <a href="#conexion-y-cargue-de-tablas-desde-sql-con-registro-de-duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Conexión y carga de tablas desde SQL
+      Conexión y cargue de tablas desde SQL con registro de duración
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validador-de-campos-repetidos" class="md-nav__link">
+  <a href="#transformacion-de-datos-y-preparacion-de-columnas-en-df_final" class="md-nav__link">
     <span class="md-ellipsis">
-      Validador de campos repetidos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformacion-y-limpieza-de-texto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transformación y limpieza de texto
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conexion-a-la-base-de-datos-dwh" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conexión a la base de datos DWH
+      Transformación de Datos y Preparación de Columnas en df_final
     </span>
   </a>
   
@@ -873,6 +834,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3-FactSubsidioVivienda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 FactSubsidioVivienda
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1534,54 +1516,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuracion-inicial-del-logger" class="md-nav__link">
+  <a href="#configuracion-del-logger-y-comienzo-del-proceso-etl" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuración inicial del logger
+      Configuración del logger y comienzo del proceso ETL
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#definicion-de-consultas-sql-para-extraccion-de-datos-de-vivienda" class="md-nav__link">
+  <a href="#conexion-y-procesamiento-de-datos-en-base-minerva" class="md-nav__link">
     <span class="md-ellipsis">
-      Definición de Consultas SQL para Extracción de Datos de Vivienda
+      Conexión y Procesamiento de Datos en Base Minerva
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#conexion-y-carga-de-tablas-desde-sql" class="md-nav__link">
+  <a href="#conexion-y-cargue-de-tablas-desde-sql-con-registro-de-duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Conexión y carga de tablas desde SQL
+      Conexión y cargue de tablas desde SQL con registro de duración
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validador-de-campos-repetidos" class="md-nav__link">
+  <a href="#transformacion-de-datos-y-preparacion-de-columnas-en-df_final" class="md-nav__link">
     <span class="md-ellipsis">
-      Validador de campos repetidos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformacion-y-limpieza-de-texto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transformación y limpieza de texto
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conexion-a-la-base-de-datos-dwh" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conexión a la base de datos DWH
+      Transformación de Datos y Preparación de Columnas en df_final
     </span>
   </a>
   
@@ -1616,14 +1580,14 @@
                   
 
 
-<h1 id="23-fact-subsidio-vivienda">2.3 Fact Subsidio Vivienda<a class="headerlink" href="#23-fact-subsidio-vivienda" title="Permanent link">&para;</a></h1>
+<h1 id="22-fact-historico-cuota">2.2 Fact Historico Cuota<a class="headerlink" href="#22-fact-historico-cuota" title="Permanent link">&para;</a></h1>
 <h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
-<p>El objetivo de este proceso ETL es integrar y almacenar en un <em>Data Warehouse</em> (DWH) los datos de postulaciones para subsidios de vivienda. Se inicia configurando el entorno de trabajo y registrando los eventos mediante un <code>logger</code> que documenta cada fase del proceso. Con una serie de consultas SQL definidas en <code>qr_structure</code>, el proceso extrae datos de varias tablas relacionadas con subsidios en la base de datos Minerva, tales como <code>subvi02</code>, <code>subvi03</code>, <code>subvi04</code>, <code>subvi05</code>, y <code>subvi06</code>. Estas consultas incluyen filtros específicos para seleccionar los registros de los últimos 18 meses, a través de la columna <code>periodo</code>.</p>
-<p>Cada tabla es validada en búsqueda de registros duplicados antes de transformarse en un formato uniforme y limpio. Las columnas de texto son convertidas a mayúsculas y sus valores de <code>"NAN"</code> o <code>"NONE"</code> son reemplazados con valores nulos para facilitar el procesamiento. Finalmente, el proceso guarda los datos transformados en tablas específicas del DWH, reemplazando los datos previos si existen. Las tablas se guardan con nombres definidos en <code>dim_names</code> para cada conjunto de datos: <code>BD_Dim_Subvi_Postulacion</code>, <code>BD_Dim_Subvi_Postulacion_Detalle</code>, <code>BD_Fact_Subvi_Beneficiario</code>, <code>BD_Fact_Subvi_Financiero</code>, y <code>BD_Fact_Subvi_Resultado_Solicitud</code>.</p>
+<p>Este proceso ETL (Extracción, Transformación y Carga) tiene como objetivo principal centralizar la información histórica de cuotas asociadas a giros de subsidios. Primero, se configura el entorno mediante la importación de librerías y funciones personalizadas para establecer conexiones con las bases de datos y manejar el almacenamiento y la transformación de datos. El script se conecta a la base de datos Minerva para obtener datos de giros y cuotas desde la tabla <code>subsi09</code>, a la cual se le aplica un <code>LEFT JOIN</code> con la tabla <code>subsi22</code> para integrar datos adicionales de beneficiarios. Luego, la información extraída se organiza y clasifica según el tipo de subsidio, la oportunidad de pago y otras variables relevantes.</p>
+<p>Posteriormente, los datos se enriquecen en el <em>Data Warehouse</em> (DWH) con claves únicas, identificadores secuenciales y etiquetas de clasificación, como <code>TipoGiro</code>, <code>KeyHistoricos</code>, y <code>KeyEstadoGiroCuota</code>, lo cual facilita la administración y análisis de la información. Al final, el DataFrame resultante se carga en la tabla <code>BD_Fact_HistoricoCuota</code> en el DWH, reemplazando los datos previos si existen, para mantener una fuente de datos consolidada y actualizada sobre el estado de giros y cuotas de subsidios.</p>
 <hr />
 <h3 id="diagrama-de-secuencia-para-el-proceso-etl">Diagrama de secuencia para el proceso ETL<a class="headerlink" href="#diagrama-de-secuencia-para-el-proceso-etl" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>sequenceDiagram
-    title Diagrama de secuencia para el proceso ETL - FactSubsidioVivienda
+    title Diagrama de secuencia para el proceso  - FactHistoricoCuota
     participant 👤 Usuario
     participant ETL_Script
     participant Minerva_DB as Base de Datos Minerva
@@ -1633,29 +1597,26 @@
     ETL_Script -&gt;&gt; ETL_Script: Configura entorno y logger
     ETL_Script -&gt;&gt; Minerva_DB: Conecta a BD Minerva
     Minerva_DB --&gt;&gt; ETL_Script: Conexión exitosa
-    ETL_Script -&gt;&gt; Minerva_DB: Ejecuta consultas para cada tabla de `qr_structure`
-    Minerva_DB --&gt;&gt; ETL_Script: Retorna datos de postulaciones y subsidios
-    ETL_Script -&gt;&gt; ETL_Script: Valida duplicados y limpia datos
+    ETL_Script -&gt;&gt; Minerva_DB: Ejecuta consulta en subsi09 y subsi22
+    Minerva_DB --&gt;&gt; ETL_Script: Retorna datos de cuotas y giros
+    ETL_Script -&gt;&gt; ETL_Script: Transforma datos y crea claves únicas (KeyHistoricos, KeyEstadoGiroCuota)
     ETL_Script -&gt;&gt; DWH: Conecta a BD DWH
     DWH --&gt;&gt; ETL_Script: Conexión exitosa
-    ETL_Script -&gt;&gt; DWH: Carga cada tabla en DWH según `dim_names`
+    ETL_Script -&gt;&gt; DWH: Carga datos en BD_Fact_HistoricoCuota
     DWH --&gt;&gt; ETL_Script: Confirmación de carga exitosa
     ETL_Script -&gt;&gt; Usuario: Finaliza proceso ETL y registra tiempo</code></pre>
 <h2 id="etl">ETL<a class="headerlink" href="#etl" title="Permanent link">&para;</a></h2>
 <h3 id="importacion-de-librerias-y-funciones">Importación de librerías y funciones<a class="headerlink" href="#importacion-de-librerias-y-funciones" title="Permanent link">&para;</a></h3>
-<p>Este bloque de código configura el entorno para la conexión a bases de datos y el procesamiento de datos. Primero, se importan varias bibliotecas clave como SQLAlchemy, Pandas, y PyMySQL para manejar la conexión y la manipulación de datos, y <code>logging</code> para registrar eventos. Luego, se define la ruta para importar funciones personalizadas desde un archivo <code>Funciones.py</code>, ubicado en un directorio superior. Entre estas funciones se encuentran <code>StoreDuplicated</code>, <code>guardar_en_dwh</code>, <code>obtener_conexion</code>, <code>cargar_tablas</code>, <code>testfunciones</code>, y <code>setup_logger</code>, que permiten gestionar registros, establecer conexiones, y ejecutar operaciones de carga y almacenamiento en un Data Warehouse (DWH). Al final, <code>testfunciones()</code> es llamado para verificar la conexión o funcionalidad del módulo importado, lo que permite asegurar la correcta configuración antes de iniciar el procesamiento de datos.</p>
+<p>Este script configura un entorno para la conexión y manipulación de datos en una base de datos, empleando SQLAlchemy y Pandas junto a un conjunto de funciones personalizadas. Al inicio, establece un contador de tiempo usando <code>time</code>, y prepara el uso de las librerías <code>sqlalchemy</code>, <code>pandas</code>, <code>numpy</code>, y <code>logging</code> para tareas de análisis y registro de eventos. A través de la manipulación de rutas en <code>sys.path</code>, permite la importación de funciones desde el archivo <code>Funciones.py</code>, como <code>guardar_en_dwh</code>, <code>cargar_tablas</code>, <code>obtener_conexion</code>, <code>testfunciones</code>, y <code>setup_logger</code>, que proporcionan métodos específicos para la conexión con la base de datos, la carga de datos y el manejo de eventos, estructurando el código para optimizar las operaciones de almacenamiento y procesamiento de datos.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">insert</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">pymysql</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="c1">#---------------------------------------------</span>
 
 <span class="c1">#Import de modulo funciones</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -1663,251 +1624,136 @@
 
 <span class="c1"># Agrega el directorio al sys.path</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../funciones&#39;</span><span class="p">))</span>
-<span class="c1"># Importa las funciones desde el archivo Funciones.py</span>
-<span class="kn">from</span> <span class="nn">Funciones</span> <span class="kn">import</span> <span class="n">StoreDuplicated</span><span class="p">,</span> <span class="n">guardar_en_dwh</span><span class="p">,</span> <span class="n">obtener_conexion</span><span class="p">,</span> <span class="n">cargar_tablas</span><span class="p">,</span> <span class="n">testfunciones</span><span class="p">,</span> <span class="n">setup_logger</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">testfunciones</span><span class="p">())</span>
-</code></pre></div>
-<div class="codehilite"><pre><span></span><code>Importacion de funciones correcta, 23-10-2024 15:06
-</code></pre></div>
 
-<h3 id="configuracion-inicial-del-logger">Configuración inicial del logger<a class="headerlink" href="#configuracion-inicial-del-logger" title="Permanent link">&para;</a></h3>
-<p>Se configura el logger para registrar eventos del proceso ETL en el archivo <code>SubsidioVivienda.log</code>, utilizando el nivel de detalle <code>INFO</code>. También se registra el inicio del proceso, y se almacena la hora de inicio para medir el tiempo total de ejecución.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Configuración inicial</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="n">log_filename</span><span class="o">=</span><span class="s1">&#39;SubsidioVivienda.log&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="c1"># Importa las funciones desde el archivo Funciones.py</span>
+
+<span class="kn">from</span> <span class="nn">Funciones</span> <span class="kn">import</span> <span class="n">guardar_en_dwh</span><span class="p">,</span> <span class="n">cargar_tablas</span><span class="p">,</span> <span class="n">obtener_conexion</span><span class="p">,</span> <span class="n">testfunciones</span><span class="p">,</span> <span class="n">setup_logger</span>
+</code></pre></div>
+<h3 id="configuracion-del-logger-y-comienzo-del-proceso-etl">Configuración del logger y comienzo del proceso ETL<a class="headerlink" href="#configuracion-del-logger-y-comienzo-del-proceso-etl" title="Permanent link">&para;</a></h3>
+<p>En esta celda se configura el logger, que se utiliza para registrar mensajes de información (logging). El logger está configurado para guardar un archivo log con el nombre <code>HistoricoCuota.log</code>, y en esta etapa, se inicia el proceso ETL, registrando el comienzo del mismo.</p>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="n">log_filename</span><span class="o">=</span><span class="s1">&#39;HistoricoCuota.log&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>  <span class="c1"># Cambiado a logging.INFO</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">testfunciones</span><span class="p">())</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;COMIENZO ETL&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:01,473 - INFO - COMIENZO ETL
-</code></pre></div>
+<h3 id="conexion-y-procesamiento-de-datos-en-base-minerva">Conexión y Procesamiento de Datos en Base Minerva<a class="headerlink" href="#conexion-y-procesamiento-de-datos-en-base-minerva" title="Permanent link">&para;</a></h3>
+<p>El código se conecta a la base de datos <strong>Minerva</strong> mediante SQLAlchemy, usando un motor (<code>motor_minerva</code>) que obtiene su conexión a través de la función <code>obtener_conexion</code>. Una vez establecida la conexión, se ejecuta <code>cargar_tablas</code>, función encargada de extraer los datos especificados en la consulta <code>qr_structure_s9</code> y almacenarlos en <code>df_structure_s9</code>. Posteriormente, los datos resultantes (<code>df_final_s9</code>) se almacenan en el <em>Data Warehouse</em> (DWH) en la tabla <code>subsi09</code>, reemplazando cualquier contenido previo si existe.</p>
+<p>El código también define otra consulta SQL en <code>qr_structure</code> que, partiendo de la tabla <code>subsi09</code> en el DWH, clasifica el campo <code>tipsub</code> en "Rural", "No definido", o "Urbano" según condiciones específicas. Además, la consulta evalúa el campo <code>Oportunidad</code> para etiquetar registros como "Oportuno" o "No oportuno" en función de la comparación entre <code>numgir</code> y <code>numenv</code> de la tabla <code>Oportunidad</code>, unida mediante un <code>LEFT JOIN</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Lista de querys</span>
+<span class="n">qr_structure_s9</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">select c.id, b.pergir, b.cedres, b.codben, b.numgir, b.numcuo, b.valor, b.tipgir, b.fecasi, b.fecent, b.codcue, b.tipsub</span>
+<span class="s2">from subsidio.subsi09 as b</span>
+<span class="s2">left join (select CONCAT(coddoc, documento) as id, codben from subsidio.subsi22) as c</span>
+<span class="s2">on b.codben = c.codben </span>
 
-<h3 id="definicion-de-consultas-sql-para-extraccion-de-datos-de-vivienda">Definición de Consultas SQL para Extracción de Datos de Vivienda<a class="headerlink" href="#definicion-de-consultas-sql-para-extraccion-de-datos-de-vivienda" title="Permanent link">&para;</a></h3>
-<p>Este código define un conjunto de consultas SQL organizadas en el diccionario <code>qr_structure</code>, que extraen y estructuran datos de varias tablas relacionadas con información de postulaciones de vivienda. Cada consulta (<code>"subvi02"</code>, <code>"subvi03"</code>, <code>"subvi04"</code>, <code>"subvi05"</code>, <code>"subvi06"</code>) selecciona un conjunto de campos específicos, normalizando el formato de las columnas para facilitar su integración en el análisis de datos. </p>
-<p>Además, las consultas comparten un filtro común que limita los datos a los registros con un <code>periodo</code> dentro de los últimos 18 meses, usando <code>DATE_FORMAT</code> y <code>DATE_SUB</code> para establecer el rango de fechas en las condiciones <code>WHERE</code>. Varias de las subconsultas emplean <code>JOIN</code> para combinar registros de la tabla <code>subvi02</code> y asociar documentos de solicitud específicos con otros datos de las tablas adicionales.</p>
-<p>Finalmente, el diccionario <code>dim_names</code> asocia cada clave de <code>qr_structure</code> con un nombre de tabla específico para facilitar su identificación en el procesamiento posterior, siendo este diseño ideal para organizar y cargar datos en un entorno de Data Warehouse.</p>
+<span class="s2">where STR_TO_DATE(CONCAT(pergir, &#39;01&#39;), &#39;%Y%m</span><span class="si">%d</span><span class="s2">&#39;) &lt;= CURRENT_DATE()</span>
+<span class="s2">and STR_TO_DATE(CONCAT(pergir, &#39;01&#39;), &#39;%Y%m</span><span class="si">%d</span><span class="s2">&#39;) &gt;= cast(DATE_SUB(CURRENT_DATE(), INTERVAL 18 MONTH) as CHAR)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">}</span>
+<span class="n">df_structure_s9</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;LECTURA DE QUERYS&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">qr_structure_s9</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">])</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Conexion a base Minerva</span>
+<span class="n">motor_minerva</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;minerva&#39;</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE MINERVA&#39;</span><span class="p">)</span>
+
+<span class="n">cargar_tablas</span><span class="p">(</span><span class="n">motor_minerva</span><span class="p">,</span> <span class="n">qr_structure_s9</span><span class="p">,</span> <span class="n">df_structure_s9</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_final_s9</span> <span class="o">=</span> <span class="n">df_structure_s9</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">guardar_en_dwh</span><span class="p">(</span><span class="n">df_final_s9</span><span class="p">,</span> <span class="s1">&#39;subsi09&#39;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">#Lista de querys</span>
 <span class="n">qr_structure</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;subvi02&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;SELECT </span>
-<span class="s1">                CONCAT(coddoc, cedpos) as ID_AFILIADO, </span>
-<span class="s1">                periodo, </span>
-<span class="s1">                documento as NUMERO_SOLICITUD,</span>
-<span class="s1">                numrad as NUMERO_RADICADO,</span>
-<span class="s1">                salario,</span>
-<span class="s1">                porapo AS PORCENTAJE_APORTES,</span>
-<span class="s1">                tippob AS TIPO_POBLACION,</span>
-<span class="s1">                tippos AS TIPO_POSTULANTE,</span>
-<span class="s1">                discap AS DISCAPACIDAD,</span>
-<span class="s1">                cabhog AS CABEZA_HOGAR,</span>
-<span class="s1">                numasi AS NUMERO_ASIGNACIONES,</span>
-<span class="s1">                tipmad AS TIPO_MADRE,</span>
-<span class="s1">                prioridad,</span>
-<span class="s1">                estado,</span>
-<span class="s1">                fecest AS FECHA_ESTADO,</span>
-<span class="s1">                fecdig AS FECHA_DIGITACION,</span>
-<span class="s1">                fecmod AS FECHA_MODIFICACION,</span>
-<span class="s1">                fecact AS FECHA_ACTUALIZACION,</span>
-<span class="s1">                nota</span>
-<span class="s1">                FROM vivienda.subvi02</span>
-<span class="s1">                WHERE DATE_FORMAT(STR_TO_DATE(periodo, &#39;%Y%m&#39;), &#39;%Y%m01&#39;) &gt; DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 18 MONTH), &#39;%Y%m01&#39;)              </span>
-<span class="s1">                &#39;&#39;&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi03&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;SELECT </span>
-<span class="s1">                documento as NUMERO_SOLICITUD,</span>
-<span class="s1">                modsol AS MODALIDAD_SOLICITUD,</span>
-<span class="s1">                tippro AS TIPO_PROYECTO,</span>
-<span class="s1">                coddep AS COD_DEP,</span>
-<span class="s1">                codciu AS COD_CIU,</span>
-<span class="s1">                tipviv AS TIPO_VIVIENDA,</span>
-<span class="s1">                valviv AS VALOR_VIVIENDA,</span>
-<span class="s1">                valaho AS VALOR_AHORRO,</span>
-<span class="s1">                valces AS VALOR_CESANTIAS,</span>
-<span class="s1">                fecter AS FECHA_TERMINA_CONTRATO,</span>
-<span class="s1">                totapo AS TOTAL_APORTES,</span>
-<span class="s1">                fecini AS FECHA_INICIAL,</span>
-<span class="s1">                totsub AS TOTAL_SUBSIDIO,</span>
-<span class="s1">                totfin AS TOTAL_FINANCIADO</span>
-<span class="s1">                FROM vivienda.subvi03 s03</span>
-<span class="s1">                INNER JOIN (</span>
-<span class="s1">                SELECT </span>
-<span class="s1">                    periodo, </span>
-<span class="s1">                    documento as NUMERO_SOLICITUD</span>
-<span class="s1">                    FROM vivienda.subvi02</span>
-<span class="s1">                    WHERE DATE_FORMAT(STR_TO_DATE(periodo, &#39;%Y%m&#39;), &#39;%Y%m01&#39;) &gt; DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 18 MONTH), &#39;%Y%m01&#39;)</span>
-<span class="s1">                    ) AS s02 ON s03.documento = s02.NUMERO_SOLICITUD&#39;&#39;&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi04&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;SELECT</span>
-<span class="s1">                documento as NUMERO_SOLICITUD,</span>
-<span class="s1">                CONCAT(coddoc, numdoc) as ID_AFILIADO,</span>
-<span class="s1">                priape AS PRIMER_APELLIDO,</span>
-<span class="s1">                segape AS SEGUNDO_APELLIDO,</span>
-<span class="s1">                prinom AS PRIMER_NOMBRE,</span>
-<span class="s1">                segnom AS SEGUNDO_NOMBRE,</span>
-<span class="s1">                fecnac AS FECHA_NACIMIENTO,</span>
-<span class="s1">                numdoc AS NUMERO_DOCUMENTO,</span>
-<span class="s1">                coddoc AS CODDOC,</span>
-<span class="s1">                sexo,</span>
-<span class="s1">                parent AS PARENTESCO,</span>
-<span class="s1">                estciv AS ESTADO_CIVIL,</span>
-<span class="s1">                discap AS DISCAPACIDAD,</span>
-<span class="s1">                ingres AS INGRESOS_MENSUALES</span>
-<span class="s1">                FROM vivienda.subvi04 s04</span>
-<span class="s1">                INNER JOIN (</span>
-<span class="s1">                SELECT </span>
-<span class="s1">                    periodo, </span>
-<span class="s1">                    documento as NUMERO_SOLICITUD</span>
-<span class="s1">                    FROM vivienda.subvi02</span>
-<span class="s1">                    WHERE DATE_FORMAT(STR_TO_DATE(periodo, &#39;%Y%m&#39;), &#39;%Y%m01&#39;) &gt; DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 18 MONTH), &#39;%Y%m01&#39;)</span>
-<span class="s1">                    ) AS s02 ON s04.documento = s02.NUMERO_SOLICITUD</span>
-<span class="s1">                &#39;&#39;&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi05&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;select </span>
-<span class="s1">                documento as NUMERO_SOLICITUD,</span>
-<span class="s1">                credito AS ESTADO_CREDITO,</span>
-<span class="s1">                cueaho AS CUENTA_AHORROS,</span>
-<span class="s1">                codban COD_BANCO,</span>
-<span class="s1">                ciuban AS CIUDAD_BANCO,</span>
-<span class="s1">                fecaho AS FECHA_AHORROS,</span>
-<span class="s1">                fonces AS FONDO_CESANTIAS,</span>
-<span class="s1">                fecces AS FECHA_CESANTIAS,</span>
-<span class="s1">                fecini AS FECHA_INICIAL,</span>
-<span class="s1">                ciufon AS CIUDAD_CESANTIAS</span>
-<span class="s1">                FROM vivienda.subvi05 s05</span>
-<span class="s1">                INNER JOIN (</span>
-<span class="s1">                SELECT </span>
-<span class="s1">                    periodo, </span>
-<span class="s1">                    documento as NUMERO_SOLICITUD</span>
-<span class="s1">                    FROM vivienda.subvi02</span>
-<span class="s1">                    WHERE DATE_FORMAT(STR_TO_DATE(periodo, &#39;%Y%m&#39;), &#39;%Y%m01&#39;) &gt; DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 18 MONTH), &#39;%Y%m01&#39;)</span>
-<span class="s1">                    ) AS s02 ON s05.documento = s02.NUMERO_SOLICITUD&#39;&#39;&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi06&quot;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;select </span>
-<span class="s1">                documento as NUMERO_SOLICITUD,</span>
-<span class="s1">                s06.periodo ,</span>
-<span class="s1">                numasi AS NUMERO_ASIGNACIONES,</span>
-<span class="s1">                fecasi AS FECHA_ASIGNACION, </span>
-<span class="s1">                valaju AS VALOR_AJUSTE,</span>
-<span class="s1">                valsub AS VALOR_SUBSIDIO,</span>
-<span class="s1">                nota,</span>
-<span class="s1">                estado,</span>
-<span class="s1">                fecven AS FECHA_VENCIMIENTO,</span>
-<span class="s1">                fecpag AS FECHA_PAGO,</span>
-<span class="s1">                fecleg AS FECHA_LEGALIZACION,</span>
-<span class="s1">                ruaf,</span>
-<span class="s1">                ruasub,</span>
-<span class="s1">                feccom AS FECHA_COMPRA</span>
-<span class="s1">                FROM vivienda.subvi06 s06</span>
-<span class="s1">                INNER JOIN (</span>
-<span class="s1">                SELECT </span>
-<span class="s1">                    periodo, </span>
-<span class="s1">                    documento as NUMERO_SOLICITUD</span>
-<span class="s1">                    FROM vivienda.subvi02</span>
-<span class="s1">                    WHERE DATE_FORMAT(STR_TO_DATE(periodo, &#39;%Y%m&#39;), &#39;%Y%m01&#39;) &gt; DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 18 MONTH), &#39;%Y%m01&#39;)</span>
-<span class="s1">                    ) AS s02 ON s06.documento = s02.NUMERO_SOLICITUD&#39;&#39;&#39;</span>
-               <span class="p">}</span>
-<span class="n">dim_names</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;subvi02&quot;</span><span class="p">:</span><span class="s1">&#39;BD_Dim_Subvi_Postulacion&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi03&quot;</span><span class="p">:</span><span class="s1">&#39;BD_Dim_Subvi_Postulacion_Detalle&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi04&quot;</span><span class="p">:</span><span class="s1">&#39;BD_Fact_Subvi_Beneficiario&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi05&quot;</span><span class="p">:</span><span class="s1">&#39;BD_Fact_Subvi_Financiero&#39;</span><span class="p">,</span>
-    <span class="s2">&quot;subvi06&quot;</span><span class="p">:</span><span class="s1">&#39;BD_Fact_Subvi_Resultado_Solicitud&#39;</span>
-               <span class="p">}</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    select </span>
+<span class="s2">        s9.id, s9.pergir, s9.codben, s9.numgir, s9.numcuo, s9.valor, s9.tipgir, s9.fecasi, s9.fecent, s9.codcue, s9.cedres,</span>
+<span class="s2">        IF(s9.tipsub in (&#39;A&#39;, &#39;G&#39;), &#39;Rural&#39;, (IF (s9.tipsub IS NULL, &#39;No definido&#39;, &#39;Urbano&#39; ))) as tipsub,</span>
+<span class="s2">        IF( s9.numgir &lt;= opo.numenv , &#39;Oportuno&#39; , </span>
+<span class="s2">            IF( s9.numgir &gt; opo.numenv , &#39;No oportuno&#39; , NULL ) ) AS Oportunidad</span>
+<span class="s2">    from dwh.subsi09 as s9</span>
+<span class="s2">    LEFT JOIN (select numenv, pergirpag, cedres, codben from dwh.Oportunidad) as opo</span>
+<span class="s2">    ON opo.pergirpag = s9.pergir</span>
+<span class="s2">    AND opo.cedres = s9.cedres</span>
+<span class="s2">    AND opo.codben = s9.codben;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="p">}</span>
 <span class="n">df_structure</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;LECTURA DE QUERYS&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">qr_structure</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">])</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:01,487 - INFO - LECTURA DE QUERYS
-</code></pre></div>
-
-<h3 id="conexion-y-carga-de-tablas-desde-sql">Conexión y carga de tablas desde SQL<a class="headerlink" href="#conexion-y-carga-de-tablas-desde-sql" title="Permanent link">&para;</a></h3>
-<p>Este código se conecta a la base de datos Minerva y carga las tablas especificadas en <code>qr_structure</code> utilizando SQL. Para cada tabla, el proceso de carga es registrado en el <code>logger</code>, y al final se registra el tiempo total que tomó cargar todas las tablas desde MySQL. Esto permite monitorear la ejecución y duración del proceso de carga de datos.</p>
+<h3 id="conexion-y-cargue-de-tablas-desde-sql-con-registro-de-duracion">Conexión y cargue de tablas desde SQL con registro de duración<a class="headerlink" href="#conexion-y-cargue-de-tablas-desde-sql-con-registro-de-duracion" title="Permanent link">&para;</a></h3>
+<p>Este bloque se conecta a la base de datos Minerva, carga las tablas definidas en <code>qr_structure</code>, y utiliza el <code>logger</code> para registrar tanto el tiempo individual de carga de cada tabla como el tiempo total del proceso. Esto proporciona visibilidad sobre el rendimiento de cada cargue y del proceso general, facilitando el monitoreo y la optimización del flujo de datos.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Conexion a base Minerva</span>
-<span class="n">motor</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;minerva&#39;</span><span class="p">))</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE MINERVA&#39;</span><span class="p">)</span>
+<span class="n">motor</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;dwh&#39;</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE DWH&#39;</span><span class="p">)</span>
+
 <span class="n">cargar_tablas</span><span class="p">(</span><span class="n">motor</span><span class="p">,</span> <span class="n">qr_structure</span><span class="p">,</span> <span class="n">df_structure</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:01,507 - INFO - CONEXION A BASE MINERVA
-2024-10-23 15:06:01,865 - INFO - Cargando subvi02 
-2024-10-23 15:06:02,063 - INFO - Cargada subvi02 --- 0.20 seconds ---
-2024-10-23 15:06:02,063 - INFO - Cargando subvi03 
-2024-10-23 15:06:02,205 - INFO - Cargada subvi03 --- 0.14 seconds ---
-2024-10-23 15:06:02,206 - INFO - Cargando subvi04 
-2024-10-23 15:06:02,352 - INFO - Cargada subvi04 --- 0.15 seconds ---
-2024-10-23 15:06:02,353 - INFO - Cargando subvi05 
-2024-10-23 15:06:02,403 - INFO - Cargada subvi05 --- 0.05 seconds ---
-2024-10-23 15:06:02,405 - INFO - Cargando subvi06 
-2024-10-23 15:06:02,453 - INFO - Cargada subvi06 --- 0.05 seconds ---
-2024-10-23 15:06:02,509 - INFO - CARGUE TABLAS DESDE MYSQL --- subvi06 --- 1.00 seconds ---
-</code></pre></div>
+<h3 id="transformacion-de-datos-y-preparacion-de-columnas-en-df_final">Transformación de Datos y Preparación de Columnas en <code>df_final</code><a class="headerlink" href="#transformacion-de-datos-y-preparacion-de-columnas-en-df_final" title="Permanent link">&para;</a></h3>
+<p>Este código aplica una serie de transformaciones en el <code>DataFrame</code> <code>df_final</code> para estructurar los datos de manera uniforme y estandarizada. Cambia el tipo de datos de la columna <code>codben</code> a texto, renombra <code>pergir</code> como <code>periodo</code>, y agrega nuevas columnas como <code>KeyHistoricos</code>, formada a partir de la concatenación de <code>periodo</code>, <code>codben</code> y el sufijo <code>'Ben'</code>. Además, genera <code>TipoGiro</code> para clasificar el tipo de giro en "Adicional" o "Normal" según el valor de <code>tipgir</code>, y <code>KeyEstadoGiroCuota</code> para crear identificadores únicos. Tras convertir los nombres de todas las columnas a mayúsculas, se renombran campos clave (por ejemplo, <code>ID</code> como <code>ID_AFILIADO</code>, <code>VALOR</code> como <code>VALOR_CUOTA</code>) y se agrega <code>ID_REGISTRO</code> como un identificador secuencial para cada fila. Finalmente, se reorganizan las columnas en un orden específico para una estructura consistente, con <code>ID_REGISTRO</code> al inicio, seguido de los campos principales y claves generadas. Este flujo asegura que el <code>DataFrame</code> esté optimizado para cargas posteriores y análisis en bases de datos u otros sistemas.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Asumiendo que df_final = df_structure[&#39;query&#39;]</span>
+<span class="c1"># Crear la columna &#39;Validador&#39; basado en la comparación entre &#39;fecafi&#39; y &#39;fecapr&#39;</span>
 
-<h3 id="validador-de-campos-repetidos">Validador de campos repetidos<a class="headerlink" href="#validador-de-campos-repetidos" title="Permanent link">&para;</a></h3>
-<p>Se verifica la presencia de registros duplicados en todas las tablas del diccionario <code>df_structure</code>. Las columnas utilizadas para comparar duplicados excluyen la columna <code>id</code>. Los duplicados detectados se almacenan utilizando la función <code>StoreDuplicated</code>, y luego se eliminan los duplicados de cada tabla con <code>drop_duplicates()</code>. El proceso se registra en el log para cada tabla, junto con el tiempo total del validador de duplicados.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Validador de campos repetidos </span>
-<span class="n">validador_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>   
-    <span class="n">ColumnsToCompare</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;id&#39;</span> <span class="p">]</span> <span class="p">]</span>
-    <span class="n">StoreDuplicated</span><span class="p">(</span><span class="s1">&#39;N/A&#39;</span> <span class="p">,</span> <span class="n">ColumnsToCompare</span><span class="p">,</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">],</span> <span class="sa">r</span><span class="s1">&#39;trazaDuplicados_&#39;</span> <span class="o">+</span> <span class="n">ky</span> <span class="p">)</span>
-    <span class="c1">#Limpieza inicial quitar duplicados</span>
-    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;VALIDADOR TABLA: &#39;</span><span class="o">+</span> <span class="n">ky</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VALIDADOR DUPLICADOS --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">validador_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:02,542 - INFO - VALIDADOR TABLA: subvi02
-2024-10-23 15:06:02,551 - INFO - VALIDADOR TABLA: subvi03
-2024-10-23 15:06:02,561 - INFO - VALIDADOR TABLA: subvi04
-2024-10-23 15:06:02,568 - INFO - VALIDADOR TABLA: subvi05
-2024-10-23 15:06:02,576 - INFO - VALIDADOR TABLA: subvi06
-2024-10-23 15:06:02,577 - INFO - VALIDADOR DUPLICADOS --- 0.06 seconds ---
-</code></pre></div>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span>
+<span class="c1"># Cambiar el tipo de columna &#39;codben&#39; a texto</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;codben&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;codben&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 
-<h3 id="transformacion-y-limpieza-de-texto">Transformación y limpieza de texto<a class="headerlink" href="#transformacion-y-limpieza-de-texto" title="Permanent link">&para;</a></h3>
-<p>Se realiza una limpieza de las columnas de texto en cada tabla dentro de <code>df_structure</code>. Las columnas de texto se convierten a mayúsculas (<code>UPPER</code>), se eliminan los espacios en blanco al inicio y al final, y se reemplazan los valores <code>"NAN"</code> y <code>"NONE"</code> por valores nulos (<code>NaN</code>). El tiempo total de la operación se registra en el log.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Transformación 2</span>
-<span class="n">limpieza_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_structure</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="c1">#print(ky)</span>
-    <span class="c1"># Convertir todos los nombres de las columnas a mayúsculas</span>
-    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-    <span class="c1">#Pasar las columnas tipo texto a UPPER</span>
-    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-    <span class="c1">#En las columnas tipo texto, eliminar espacios al comienzo y al final</span>
-    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-    <span class="c1">#Reemplazar los &quot;NAN&quot; o &quot;NONE&quot; por NaN</span>
-    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;NAN&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-    <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_structure</span><span class="p">[</span><span class="n">ky</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;NONE&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;LIMPIEZA --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">limpieza_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:02,656 - INFO - LIMPIEZA --- 0.07 seconds ---
-</code></pre></div>
+<span class="c1"># Renombrar la columna &#39;pergir&#39; a &#39;periodo&#39;</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pergir&#39;</span><span class="p">:</span> <span class="s1">&#39;periodo&#39;</span><span class="p">})</span>
 
-<h3 id="conexion-a-la-base-de-datos-dwh">Conexión a la base de datos DWH<a class="headerlink" href="#conexion-a-la-base-de-datos-dwh" title="Permanent link">&para;</a></h3>
-<p>Se establece la conexión con la base de datos DWH utilizando la función <code>Conexion_dwh()</code> y se crea el motor de conexión con <code>create_engine()</code>. El evento de conexión exitosa se registra en el log.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#---------------------------------------------</span>
-<span class="c1">#Conexion a base dwh</span>
-<span class="n">motor2</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">obtener_conexion</span><span class="p">(</span><span class="s1">&#39;dwh&#39;</span><span class="p">))</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;CONEXION A BASE DWH&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:02,662 - INFO - CONEXION A BASE DWH
-</code></pre></div>
+<span class="c1"># Agregar la columna &#39;KeyHistoricos&#39;</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;KeyHistoricos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;periodo&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;codben&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;Ben&#39;</span>  <span class="c1"># Equivalente a Text.Start(&#39;Beneficiario&#39;,3)</span>
 
+<span class="c1"># Agregar la columna &#39;TipoGiro&#39;</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;TipoGiro&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;tipgir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;Adicional&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span> <span class="k">else</span> <span class="s1">&#39;Normal&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agregar la columna &#39;KeyEstadoGiroCuota&#39;</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;KeyEstadoGiroCuota&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;periodo&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;cedres&#39;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convertir todos los nombres de las columnas de df_final a mayúsculas</span>
+<span class="n">df_final</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="c1"># Cambiar el nombre de dos campos específicos</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;ID&#39;</span><span class="p">:</span> <span class="s1">&#39;ID_AFILIADO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PERIODO&#39;</span><span class="p">:</span> <span class="s1">&#39;PERIODO_PAGO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CODBEN&#39;</span><span class="p">:</span> <span class="s1">&#39;COD_BENEFICIARIO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NUMGIR&#39;</span><span class="p">:</span><span class="s1">&#39;CONSECUTIVO_GIRO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NUMCUO&#39;</span><span class="p">:</span><span class="s1">&#39;NUMERO_CUOTAS&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VALOR&#39;</span><span class="p">:</span><span class="s1">&#39;VALOR_CUOTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TIPGIR&#39;</span><span class="p">:</span><span class="s1">&#39;TIPO_GIRO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FECASI&#39;</span><span class="p">:</span><span class="s1">&#39;FECHA_ASIGNACION_CUOTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FECENT&#39;</span><span class="p">:</span><span class="s1">&#39;FECHA_DISPOSICION_CUOTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CODCUE&#39;</span><span class="p">:</span><span class="s1">&#39;CODIGO_CUENTA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CEDRES&#39;</span><span class="p">:</span><span class="s1">&#39;CEDULA_RESPONSABLE_DEL_PAGO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TIPSUB&#39;</span><span class="p">:</span><span class="s1">&#39;TIPO_SUBSIDIO&#39;</span><span class="p">,</span>
+
+    <span class="p">})</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Crear una nueva columna &#39;ID_REGISTRO&#39; con valores secuenciales</span>
+<span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;ID_REGISTRO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_final</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Reorganizar las columnas, colocando &#39;ID_REGISTRO&#39; de primeras</span>
+<span class="n">columnas_ordenadas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ID_REGISTRO&#39;</span><span class="p">,</span> <span class="s1">&#39;ID_AFILIADO&#39;</span><span class="p">,</span> <span class="s1">&#39;PERIODO_PAGO&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_BENEFICIARIO&#39;</span><span class="p">,</span><span class="s1">&#39;CONSECUTIVO_GIRO&#39;</span><span class="p">,</span> <span class="s1">&#39;NUMERO_CUOTAS&#39;</span><span class="p">,</span> <span class="s1">&#39;VALOR_CUOTA&#39;</span><span class="p">,</span> <span class="s1">&#39;TIPO_GIRO&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;FECHA_ASIGNACION_CUOTA&#39;</span><span class="p">,</span> <span class="s1">&#39;FECHA_DISPOSICION_CUOTA&#39;</span><span class="p">,</span> <span class="s1">&#39;CODIGO_CUENTA&#39;</span><span class="p">,</span> <span class="s1">&#39;CEDULA_RESPONSABLE_DEL_PAGO&#39;</span><span class="p">,</span> <span class="s1">&#39;TIPO_SUBSIDIO&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;OPORTUNIDAD&#39;</span><span class="p">,</span> <span class="s1">&#39;KEYHISTORICOS&#39;</span><span class="p">,</span> <span class="s1">&#39;TIPOGIRO&#39;</span><span class="p">,</span> <span class="s1">&#39;KEYESTADOGIROCUOTA&#39;</span><span class="p">]</span>
+
+<span class="c1"># Reorganizar el DataFrame</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df_final</span>
+</code></pre></div>
+<hr />
 <h3 id="guardar-en-base-de-datos-dwh">Guardar en base de datos DWH<a class="headerlink" href="#guardar-en-base-de-datos-dwh" title="Permanent link">&para;</a></h3>
-<p>Se guarda cada tabla del diccionario <code>df_structure</code> en la base de datos DWH, utilizando los nombres definidos en <code>dim_names</code>. Si las tablas ya existen en la base de datos, se reemplazan con los nuevos datos. El tiempo total de almacenamiento se registra en el log.</p>
-<div class="highlight"><pre><span></span><code><span class="n">guardar_en_dwh</span><span class="p">(</span><span class="n">df_structure</span><span class="p">,</span> <span class="n">dim_names</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<p>Se guarda el dataframe <code>dfTotal</code> en la tabla <code>BD_Fact_HistoricoCuota</code> de la base DWH usando <code>with</code> para garantizar el cierre automático de la conexión. Se registra el tiempo de ejecución en el log.</p>
+<div class="highlight"><pre><span></span><code><span class="n">guardar_en_dwh</span><span class="p">(</span><span class="n">df_final</span><span class="p">,</span> <span class="s1">&#39;BD_Fact_HistoricoCuota&#39;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="n">df_final</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:02,668 - INFO - Intentando conexión a la base DWH...
-2024-10-23 15:06:02,670 - INFO - Conexión a la base DWH establecida con éxito.
-2024-10-23 15:06:02,962 - INFO - Almacenando tabla subvi02 en DWH como BD_Dim_Subvi_Postulacion
-2024-10-23 15:06:04,064 - INFO - Tabla subvi02 almacenada correctamente como BD_Dim_Subvi_Postulacion.
-2024-10-23 15:06:04,066 - INFO - Almacenando tabla subvi03 en DWH como BD_Dim_Subvi_Postulacion_Detalle
-2024-10-23 15:06:04,954 - INFO - Tabla subvi03 almacenada correctamente como BD_Dim_Subvi_Postulacion_Detalle.
-2024-10-23 15:06:04,955 - INFO - Almacenando tabla subvi04 en DWH como BD_Fact_Subvi_Beneficiario
-2024-10-23 15:06:05,906 - INFO - Tabla subvi04 almacenada correctamente como BD_Fact_Subvi_Beneficiario.
-2024-10-23 15:06:05,907 - INFO - Almacenando tabla subvi05 en DWH como BD_Fact_Subvi_Financiero
-2024-10-23 15:06:06,578 - INFO - Tabla subvi05 almacenada correctamente como BD_Fact_Subvi_Financiero.
-2024-10-23 15:06:06,579 - INFO - Almacenando tabla subvi06 en DWH como BD_Fact_Subvi_Resultado_Solicitud
-2024-10-23 15:06:07,249 - INFO - Tabla subvi06 almacenada correctamente como BD_Fact_Subvi_Resultado_Solicitud.
-2024-10-23 15:06:07,313 - INFO - ALMACENAMIENTO ---  --- 4.65 seconds ---
-2024-10-23 15:06:07,314 - INFO - Finalizando proceso de almacenamiento en DWH.
-</code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;FINAL ETL --- </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> seconds ---&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="codehilite"><pre><span></span><code>2024-10-23 15:06:07,324 - INFO - FINAL ETL --- 5.86 seconds ---
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 
